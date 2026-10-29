@@ -1,0 +1,208 @@
+#:C79    
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter
+#Date/Time:
+#:T   Wed Oct 28 21:12:04 2026
+#------------------------------
+	#Reading SymPwmCounter.ncd...
+	#Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+	#   "SymPwmCounter" is an NCD, version 3.2, device xc6slx16, package ftg256, speed -2
+	#Design creation date: 2026.10.28.19.09.26
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'strobe_top'
+	#3
+unselect -all
+	#4
+post find
+	#5
+unpost find
+	#6
+setattr main disable_draw on
+	#7
+setattr layer switch_boxes view on
+	#8
+setattr main disable_draw off
+	#Hint: change the visibility of more than one layer at a time by clicking on the apply button, clicking two or more layer buttons, and then clicking on the apply button again.
+	#9
+setattr main disable_draw on
+	#10
+setattr layer routes view on
+	#11
+setattr main disable_draw off
+	#12
+setattr main disable_draw on
+	#13
+setattr layer ratsnests view on
+	#14
+setattr main disable_draw off
+	#15
+setattr main disable_draw on
+	#16
+setattr layer clock_regions view on
+	#17
+setattr main disable_draw off
+	#18
+setattr main disable_draw on
+	#19
+setattr layer pinwires view on
+	#20
+setattr main disable_draw off
+	#21
+select -k comp 'res'
+	#22
+unselect -all
+	#23
+unselect -all
+	#24
+select comp 's_cnt<2>'
+	#comp "s_cnt<2>",  site "SLICE_X15Y2",  type = SLICEX  (RPM grid X43Y8)
+	#25
+unselect -all
+	#26
+select comp 's_cnt<2>'
+	#comp "s_cnt<2>",  site "SLICE_X15Y2",  type = SLICEX  (RPM grid X43Y8)
+	#27
+unselect -all
+	#28
+select comp 's_cnt<2>'
+	#comp "s_cnt<2>",  site "SLICE_X15Y2",  type = SLICEX  (RPM grid X43Y8)
+	#29
+post block
+	#30
+unselect comp 's_cnt<2>'
+	#31
+select -k comp 'q_out<0>'
+	#32
+unselect -all
+	#33
+select comp 'q_out<0>'
+	#comp "q_out<0>",  site "R7",  bonded type = IOB,  pad name = PAD159,  pin name = R7  (RPM grid X45Y6)
+	#34
+post block
+	#<PULL>.
+	#<PULL>.
+	#<PULL>.
+	#<INBUF>.
+	#35
+unselect comp 'q_out<0>'
+	#36
+select -k comp 'strobe_top'
+	#37
+unselect -all
+	#38
+unselect -all
+	#39
+unselect -all
+	#40
+unselect -all
+	#41
+select wire 'GENERIC(-5000,-102235)'
+	#node = GENERIC(-5000,-102235)
+	#42
+unselect -all
+	#43
+select wire 'GENERIC(-5000,-102235)'
+	#node = GENERIC(-5000,-102235)
+	#44
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#45
+unselect -all
+	#46
+select site 'OLOGIC_X8Y0'
+	#site "OLOGIC_X8Y0",  type = OLOGIC2  (RPM grid X47Y0)
+	#47
+unselect -all
+	#48
+select site 'OLOGIC_X8Y0'
+	#site "OLOGIC_X8Y0",  type = OLOGIC2  (RPM grid X47Y0)
+	#49
+post block
+	#50
+unselect -all
+	#51
+select site 'TIEOFF_X20Y0'
+	#site "TIEOFF_X20Y0",  type = TIEOFF  (RPM grid X45Y1)
+	#52
+post block
+	#53
+unselect -all
+	#54
+select site 'ILOGIC_X8Y1'
+	#site "ILOGIC_X8Y1",  type = ILOGIC2  (RPM grid X46Y2)
+	#55
+unselect -all
+	#56
+select site 'ILOGIC_X8Y1'
+	#site "ILOGIC_X8Y1",  type = ILOGIC2  (RPM grid X46Y2)
+	#57
+post block
+	#58
+unselect -all
+	#59
+select site 'TIEOFF_X19Y0'
+	#site "TIEOFF_X19Y0",  type = TIEOFF  (RPM grid X44Y0)
+	#60
+post block
+	#61
+unselect -all
+	#62
+select site 'ILOGIC_X8Y1'
+	#site "ILOGIC_X8Y1",  type = ILOGIC2  (RPM grid X46Y2)
+	#63
+unselect -all
+	#64
+select site 'ILOGIC_X8Y1'
+	#site "ILOGIC_X8Y1",  type = ILOGIC2  (RPM grid X46Y2)
+	#65
+post block
+	#66
+unselect -all
+	#67
+select site 'ILOGIC_X8Y0'
+	#site "ILOGIC_X8Y0",  type = ILOGIC2  (RPM grid X46Y0)
+	#68
+post block
+	#69
+unselect -all
+	#70
+select site 'IODELAY_X8Y0'
+	#site "IODELAY_X8Y0",  type = IODELAY2  (RPM grid X46Y1)
+	#71
+post block
+	#72
+unselect site 'IODELAY_X8Y0'
+	#73
+select -k net 'dir'
+	#74
+unselect net 'dir'
+	#75
+select -k net 'dir_GND_5_o_MUX_13_o'
+	#76
+unselect net 'dir_GND_5_o_MUX_13_o'
+	#77
+select -k net 'dir'
+	#78
+unselect net 'dir'
+	#79
+select -k net 'dir_GND_5_o_MUX_13_o'
+	#80
+unselect net 'dir_GND_5_o_MUX_13_o'
+	#81
+select -k net 'dir'
+	#82
+unselect -all
+	#83
+select comp 'dir'
+	#comp "dir",  site "SLICE_X15Y3",  type = SLICEX  (RPM grid X43Y12)
+	#84
+post block
