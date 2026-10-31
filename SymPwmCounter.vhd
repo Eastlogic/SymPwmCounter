@@ -9,7 +9,8 @@ use IEEE.std_logic_unsigned.all;
 entity SymPwmCounter is
 generic(
 CntWidth:integer:=4;						-- Разрядность счетчика по умолчанию
-CntTop:integer:=15						-- Вершина счета по умолчанию
+CntTop:integer:=15;						-- Вершина счета по умолчанию
+ChNumber:integer:=1						-- Число каналов сравнения
 );
 port(
 res,clk: 		in std_logic;
