@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: SymPwmCounter.prj
 
@@ -114,7 +114,6 @@ Parsing architecture <SymPwmCounter_arch> of entity <sympwmcounter>.
 =========================================================================
 
 Elaborating entity <SymPwmCounter> (architecture <SymPwmCounter_arch>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 47: Assignment to s_top_active ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -126,18 +125,23 @@ Synthesizing Unit <SymPwmCounter>.
         CntTop = 65535
         ChNumber = 1
 WARNING:Xst:647 - Input <wr_data<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <s_top_active>.
+    Found 16-bit register for signal <s_top_wr_reg>.
     Found 16-bit register for signal <s_cnt>.
     Found 1-bit register for signal <dir>.
     Found 1-bit register for signal <s_strobe_bot>.
     Found 1-bit register for signal <s_strobe_top>.
     Found 16-bit adder for signal <s_cnt[15]_GND_5_o_add_11_OUT> created at line 111.
     Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_10_OUT<15:0>> created at line 106.
-    Found 16-bit comparator greater for signal <s_cnt[15]_PWR_5_o_LessThan_5_o> created at line 96
+    Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_17_OUT<15:0>> created at line 117.
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_5_o> created at line 96
+    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_7_o> created at line 100
     Found 16-bit comparator greater for signal <GND_5_o_s_cnt[15]_LessThan_9_o> created at line 105
+    Found 16-bit comparator equal for signal <s_cnt[15]_GND_5_o_equal_18_o> created at line 117
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  19 D-type flip-flop(s).
-	inferred   2 Comparator(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   4 Comparator(s).
 	inferred   3 Multiplexer(s).
 Unit <SymPwmCounter> synthesized.
 
@@ -145,13 +149,14 @@ Unit <SymPwmCounter> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
  16-bit adder                                          : 1
- 16-bit subtractor                                     : 1
-# Registers                                            : 4
+ 16-bit subtractor                                     : 2
+# Registers                                            : 6
  1-bit register                                        : 3
- 16-bit register                                       : 1
-# Comparators                                          : 2
+ 16-bit register                                       : 3
+# Comparators                                          : 4
+ 16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
 # Multiplexers                                         : 3
  16-bit 2-to-1 multiplexer                             : 3
@@ -167,12 +172,13 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
  16-bit adder                                          : 1
- 16-bit subtractor                                     : 1
-# Registers                                            : 19
- Flip-Flops                                            : 19
-# Comparators                                          : 2
+ 16-bit subtractor                                     : 2
+# Registers                                            : 51
+ Flip-Flops                                            : 51
+# Comparators                                          : 4
+ 16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
 # Multiplexers                                         : 3
  16-bit 2-to-1 multiplexer                             : 3
@@ -187,8 +193,7 @@ Optimizing unit <SymPwmCounter> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SymPwmCounter, actual ratio is 0.
-FlipFlop s_cnt_0 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block SymPwmCounter, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -196,8 +201,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 21
- Flip-Flops                                            : 21
+# Registers                                            : 51
+ Flip-Flops                                            : 51
 
 =========================================================================
 
@@ -220,22 +225,26 @@ Top Level Output File Name         : SymPwmCounter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 131
+# BELS                             : 221
 #      GND                         : 1
-#      INV                         : 17
-#      LUT1                        : 16
-#      LUT2                        : 2
-#      LUT4                        : 4
-#      LUT6                        : 28
-#      MUXCY                       : 30
+#      INV                         : 33
+#      LUT1                        : 17
+#      LUT2                        : 3
+#      LUT3                        : 1
+#      LUT4                        : 18
+#      LUT5                        : 1
+#      LUT6                        : 32
+#      MUXCY                       : 66
 #      VCC                         : 1
-#      XORCY                       : 32
-# FlipFlops/Latches                : 21
-#      FDC                         : 21
+#      XORCY                       : 48
+# FlipFlops/Latches                : 51
+#      FDC                         : 3
+#      FDCE                        : 16
+#      FDPE                        : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 19
-#      IBUF                        : 1
+# IO Buffers                       : 40
+#      IBUF                        : 22
 #      OBUF                        : 18
 
 Device utilization summary:
@@ -245,20 +254,20 @@ Selected Device : 6slx16ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              21  out of  18224     0%  
- Number of Slice LUTs:                   67  out of   9112     0%  
-    Number used as Logic:                67  out of   9112     0%  
+ Number of Slice Registers:              51  out of  18224     0%  
+ Number of Slice LUTs:                  105  out of   9112     1%  
+    Number used as Logic:               105  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     69
-   Number with an unused Flip Flop:      48  out of     69    69%  
-   Number with an unused LUT:             2  out of     69     2%  
-   Number of fully used LUT-FF pairs:    19  out of     69    27%  
-   Number of unique control sets:         1
+ Number of LUT Flip Flop pairs used:    137
+   Number with an unused Flip Flop:      86  out of    137    62%  
+   Number with an unused LUT:            32  out of    137    23%  
+   Number of fully used LUT-FF pairs:    19  out of    137    13%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                          57
- Number of bonded IOBs:                  20  out of    186    10%  
+ Number of bonded IOBs:                  41  out of    186    22%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -284,7 +293,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 21    |
+clk                                | BUFGP                  | 51    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -295,9 +304,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.905ns (Maximum Frequency: 203.874MHz)
-   Minimum input arrival time before clock: 4.032ns
-   Maximum output required time after clock: 4.770ns
+   Minimum period: 5.663ns (Maximum Frequency: 176.593MHz)
+   Minimum input arrival time before clock: 4.551ns
+   Maximum output required time after clock: 4.645ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -306,33 +315,40 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.905ns (frequency: 203.874MHz)
-  Total number of paths / destination ports: 1296 / 21
+  Clock period: 5.663ns (frequency: 176.593MHz)
+  Total number of paths / destination ports: 3981 / 67
 -------------------------------------------------------------------------
-Delay:               4.905ns (Levels of Logic = 3)
-  Source:            s_cnt_10 (FF)
-  Destination:       dir (FF)
+Delay:               5.663ns (Levels of Logic = 10)
+  Source:            s_cnt_1 (FF)
+  Destination:       s_cnt_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: s_cnt_10 to dir
+  Data Path: s_cnt_1 to s_cnt_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.525   1.340  s_cnt_10 (s_cnt_10)
-     LUT6:I1->O            1   0.254   0.790  dir_GND_5_o_AND_3_o1 (dir_GND_5_o_AND_3_o1)
-     LUT4:I2->O           17   0.250   1.437  dir_GND_5_o_AND_3_o4 (dir_GND_5_o_AND_3_o)
-     LUT6:I3->O            3   0.235   0.000  Mmux_s_cnt[15]_s_cnt[15]_mux_15_OUT17 (s_cnt[15]_s_cnt[15]_mux_15_OUT<0>)
-     FDC:D                     0.074          s_cnt_0
+     FDCE:C->Q             9   0.525   1.252  s_cnt_1 (s_cnt_1)
+     LUT4:I0->O            0   0.254   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_lutdi (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<0> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<1> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<2> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<3> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<4> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<5> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<6> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<6>)
+     MUXCY:CI->O          18   0.235   1.343  Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<7> (Mcompar_s_cnt[15]_s_top_active[15]_LessThan_5_o_cy<7>)
+     LUT3:I1->O           16   0.250   1.181  _n0082_inv2 (_n0082_inv)
+     FDCE:CE                   0.302          s_cnt_0
     ----------------------------------------
-    Total                      4.905ns (1.338ns logic, 3.567ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                      5.663ns (1.887ns logic, 3.776ns route)
+                                       (33.3% logic, 66.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 21 / 21
+  Total number of paths / destination ports: 147 / 83
 -------------------------------------------------------------------------
-Offset:              4.032ns (Levels of Logic = 2)
+Offset:              4.551ns (Levels of Logic = 2)
   Source:            res (PAD)
   Destination:       s_strobe_bot (FF)
   Destination Clock: clk rising
@@ -342,30 +358,30 @@ Offset:              4.032ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.328   0.681  res_IBUF (res_IBUF)
-     INV:I->O             21   0.255   1.309  res_inv1_INV_0 (res_inv)
+     INV:I->O             51   0.255   1.828  res_inv1_INV_0 (res_inv)
      FDC:CLR                   0.459          s_strobe_bot
     ----------------------------------------
-    Total                      4.032ns (2.042ns logic, 1.990ns route)
-                                       (50.6% logic, 49.4% route)
+    Total                      4.551ns (2.042ns logic, 2.509ns route)
+                                       (44.9% logic, 55.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              4.770ns (Levels of Logic = 1)
-  Source:            s_cnt_0 (FF)
-  Destination:       q_out<0> (PAD)
+Offset:              4.645ns (Levels of Logic = 1)
+  Source:            s_strobe_bot (FF)
+  Destination:       strobe_bot (PAD)
   Source Clock:      clk rising
 
-  Data Path: s_cnt_0 to q_out<0>
+  Data Path: s_strobe_bot to strobe_bot
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             22   0.525   1.333  s_cnt_0 (s_cnt_0)
-     OBUF:I->O                 2.912          q_out_0_OBUF (q_out<0>)
+     FDC:C->Q             17   0.525   1.208  s_strobe_bot (s_strobe_bot)
+     OBUF:I->O                 2.912          strobe_bot_OBUF (strobe_bot)
     ----------------------------------------
-    Total                      4.770ns (3.437ns logic, 1.333ns route)
-                                       (72.1% logic, 27.9% route)
+    Total                      4.645ns (3.437ns logic, 1.208ns route)
+                                       (74.0% logic, 26.0% route)
 
 =========================================================================
 
@@ -377,20 +393,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.905|         |         |         |
+clk            |    5.663|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.57 secs
+Total CPU time to Xst completion: 8.71 secs
  
 --> 
 
-Total memory usage is 259340 kilobytes
+Total memory usage is 260556 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
