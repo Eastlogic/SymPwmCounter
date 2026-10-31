@@ -6,6 +6,8 @@ use IEEE.std_logic_arith.all; -- Требуется для функций конвертации (conv_std_log
 
 -- Счетчик формирования симметричной ШИМ
 -- Формирует внутренний сигнал dir - направление счета (он же флаг OverFlow/UnderFlow)
+-- Формирует сигналы-стробы strobe_topб strobe_bot - признаки максимума/минимума текущего значения
+-- Предусмотрен внешний шинный интерфейс
 
 entity SymPwmCounter is
 generic(
@@ -21,7 +23,7 @@ strobe_bot:		out std_logic;   										-- Импульс внизу счета (в нуле)
 
 -- Процессорный интерфейс таймера(фиксированная ширина шины)
 addr:				in std_logic_vector(3 downto 0);					-- Адрес регистра (до 16 регистров)
-wr_data:			in std_logic_vector(31 downto 0);				-- Фиксированная 32-битная шина данных
+wr_data:			in std_logic_vector(31 downto 0);				-- Фиксированная 32-битная шина данных на запись
 wr_en:			in std_logic											-- Строб записи от процессора
 );
 end entity;

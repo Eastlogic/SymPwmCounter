@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : ftg256
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sat Oct 31 20:49:32 2026
+Mapped Date    : Sat Oct 31 21:02:31 2026
 
 Mapping design into LUTs...
 Running directed packing...
@@ -21,7 +21,7 @@ INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
 Total REAL time at the beginning of Placer: 7 secs 
-Total CPU  time at the beginning of Placer: 7 secs 
+Total CPU  time at the beginning of Placer: 6 secs 
 
 Phase 1.1  Initial Placement Analysis
 Phase 1.1  Initial Placement Analysis (Checksum:9e1b) REAL time: 7 secs 
@@ -143,9 +143,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                3.15
 
-Peak Memory Usage:  470 MB
+Peak Memory Usage:  469 MB
 Total REAL time to MAP completion:  11 secs 
-Total CPU time to MAP completion:   11 secs 
+Total CPU time to MAP completion:   10 secs 
 
 Mapping completed.
 See MAP report file "SymPwmCounter_map.mrp" for details.
