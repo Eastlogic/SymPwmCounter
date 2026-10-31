@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2026-10-31T18:44:48</DateModified>
+  <DateModified>2026-10-31T19:36:59</DateModified>
   <ModuleName>SymPwmCounter</ModuleName>
-  <SummaryTimeStamp>2026-10-31T18:42:39</SummaryTimeStamp>
-  <SavedFilePath>D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/iseconfig/SymPwmCounter.xreport</SavedFilePath>
+  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <ImplementationReportsDirectory>D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter\</ImplementationReportsDirectory>
-  <DateInitialized>2026-10-28T21:11:45</DateInitialized>
+  <DateInitialized>2026-10-31T19:36:58</DateInitialized>
+  <SavedFilePath>D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/iseconfig/SymPwmCounter.xreport</SavedFilePath>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

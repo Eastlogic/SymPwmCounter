@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all; -- Требуется для функций конвертации (conv_std_logic_vector)
 
 
 -- Счетчик формирования симметричной ШИМ
@@ -8,15 +9,20 @@ use IEEE.std_logic_unsigned.all;
 
 entity SymPwmCounter is
 generic(
-CntWidth:integer:=4;						-- Разрядность счетчика по умолчанию
-CntTop:integer:=15;						-- Вершина счета по умолчанию
+CntWidth:integer:=16;					-- Разрядность счетчика по умолчанию
+CntTop:integer:=65535;					-- Вершина счета после сброса(по умолчанию)
 ChNumber:integer:=1						-- Число каналов сравнения
 );
 port(
 res,clk: 		in std_logic;
 q_out:			out std_logic_vector(CntWidth-1 downto 0);	-- Выход счетчика
 strobe_top:		out std_logic;  										-- Импульс на вершине счета
-strobe_bot:		out std_logic   										-- Импульс внизу счета (в нуле)
+strobe_bot:		out std_logic;   										-- Импульс внизу счета (в нуле)
+
+-- Процессорный интерфейс таймера(фиксированная ширина шины)
+addr:				in std_logic_vector(3 downto 0);					-- Адрес регистра (до 16 регистров)
+wr_data:			in std_logic_vector(31 downto 0);				-- Фиксированная 32-битная шина данных
+wr_en:			in std_logic											-- Строб записи от процессора
 );
 end entity;
 
@@ -26,6 +32,15 @@ architecture SymPwmCounter_arch of SymPwmCounter is
 signal dir: std_logic:='0';			-- Признак направления счета "вверх/вниз"
 												-- dir='0' - счет вверх (OverFlow), dir='1' - счет вниз (UnderFlow)
 signal s_cnt: std_logic_vector(CntWidth-1 downto 0):= (others => '0');
+
+-- Регистры для динамического управления вершиной счета (CntTop)
+signal s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_vector(CntTop, CntWidth); -- Теневой регистр записи
+signal s_top_active:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_vector(CntTop, CntWidth); -- Рабочий (активный) регистр таймера
+
+-- Внутренние сигналы для чтения состояния стробов внутри архитектуры
+signal strobe_bot_s: std_logic := '0';
+signal strobe_top_s: std_logic := '0';
+
 begin
 
 ------------------------------------------------------------------------------------
@@ -39,12 +54,47 @@ begin
 	strobe_top <= '0';
 	strobe_bot <= '0';
 	
+	strobe_bot_s <= '0';
+	strobe_top_s <= '0';
+	
+	s_top_wr_reg <= conv_std_logic_vector(CntTop, CntWidth);
+	s_top_active <= conv_std_logic_vector(CntTop, CntWidth);
+	
+	
 		elsif (clk'event and clk='1') then
-		
+
+			---------------------------------------------------------------------------
+			-- 1. Обработка шинного интерфейса (запись от процессора)
+			---------------------------------------------------------------------------
+			if wr_en = '1' then
+				case addr is
+					when "0001" =>
+					-- Процессор пишет новое значение вершины счета
+					-- Обрезаем 32-битные данные шины до разрядности счетчика CntWidth
+					s_top_wr_reg <= wr_data(CntWidth-1 downto 0);
+                    
+					when others =>
+					null; -- Другие адреса пока не задействованы
+				end case;
+			end if;
+        
+			---------------------------------------------------------------------------
+			-- 2. Обновление активной вершины счета строго внизу (двойная буферизация)
+			---------------------------------------------------------------------------
+--			if strobe_bot = '1' then
+--				s_top_active <= s_top_wr_reg;
+--			end if;
+
+			---------------------------------------------------------------------------
+			-- 3. Базовые импульсы стробов (гасим по умолчанию)
+			---------------------------------------------------------------------------	
 			-- По умолчанию гасим стробы каждый такт (делаем их импульсными)
 			strobe_top <= '0'; -- (Шаг 1: задаем базовое значение по умолчанию)
 			strobe_bot <= '0';
-		
+
+			---------------------------------------------------------------------------
+			-- 4. Автомат счета (использует s_top_active вместо статической константы)
+			---------------------------------------------------------------------------		
 			-- СЧЕТ ВВЕРХ: идем до значения TopValue
 			if dir='0' and s_cnt < CntTop then
 			s_cnt<=s_cnt+1;
@@ -65,7 +115,7 @@ begin
 			end if;
 			
 			---------------------------------------------------------------------------
-			-- Описание формирования стробов 
+			-- 5. Формирование стробов относительно текущей активной вершины
 			---------------------------------------------------------------------------
 			if dir='0' and s_cnt = (CntTop - 1) then
 			strobe_top <= '1';  -- строб вершины, на один такт!
