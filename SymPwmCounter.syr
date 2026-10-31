@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Reading design: SymPwmCounter.prj
 
@@ -114,7 +114,7 @@ Parsing architecture <SymPwmCounter_arch> of entity <sympwmcounter>.
 =========================================================================
 
 Elaborating entity <SymPwmCounter> (architecture <SymPwmCounter_arch>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 47: Assignment to strobe_bot_s ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 47: Assignment to s_top_wr_reg ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -130,12 +130,12 @@ WARNING:Xst:647 - Input <wr_data> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <wr_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit register for signal <s_cnt>.
     Found 1-bit register for signal <dir>.
-    Found 1-bit register for signal <strobe_top>.
-    Found 1-bit register for signal <strobe_bot>.
-    Found 16-bit adder for signal <s_cnt[15]_GND_5_o_add_10_OUT> created at line 114.
-    Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_9_OUT<15:0>> created at line 109.
-    Found 16-bit comparator greater for signal <s_cnt[15]_PWR_5_o_LessThan_4_o> created at line 99
-    Found 16-bit comparator greater for signal <GND_5_o_s_cnt[15]_LessThan_8_o> created at line 108
+    Found 1-bit register for signal <s_strobe_bot>.
+    Found 1-bit register for signal <s_strobe_top>.
+    Found 16-bit adder for signal <s_cnt[15]_GND_5_o_add_10_OUT> created at line 111.
+    Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_9_OUT<15:0>> created at line 106.
+    Found 16-bit comparator greater for signal <s_cnt[15]_PWR_5_o_LessThan_4_o> created at line 96
+    Found 16-bit comparator greater for signal <GND_5_o_s_cnt[15]_LessThan_8_o> created at line 105
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  19 D-type flip-flop(s).
@@ -336,16 +336,16 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
 -------------------------------------------------------------------------
 Offset:              4.032ns (Levels of Logic = 2)
   Source:            res (PAD)
-  Destination:       strobe_top (FF)
+  Destination:       s_strobe_bot (FF)
   Destination Clock: clk rising
 
-  Data Path: res to strobe_top
+  Data Path: res to s_strobe_bot
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.328   0.681  res_IBUF (res_IBUF)
      INV:I->O             21   0.255   1.309  res_inv1_INV_0 (res_inv)
-     FDC:CLR                   0.459          strobe_top
+     FDC:CLR                   0.459          s_strobe_bot
     ----------------------------------------
     Total                      4.032ns (2.042ns logic, 1.990ns route)
                                        (50.6% logic, 49.4% route)
@@ -385,12 +385,12 @@ clk            |    4.905|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.63 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.45 secs
  
 --> 
 
-Total memory usage is 259724 kilobytes
+Total memory usage is 259276 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    4 (   0 filtered)

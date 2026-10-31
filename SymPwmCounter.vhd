@@ -38,8 +38,8 @@ signal s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_ve
 signal s_top_active:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_vector(CntTop, CntWidth); -- –абочий (активный) регистр таймера
 
 -- ¬нутренние сигналы дл€ чтени€ состо€ни€ стробов внутри архитектуры
-signal strobe_bot_s: std_logic := '0';
-signal strobe_top_s: std_logic := '0';
+signal s_strobe_bot: std_logic := '0';
+signal s_strobe_top: std_logic := '0';
 
 begin
 
@@ -51,11 +51,8 @@ begin
 	s_cnt<= (others => '0');
 	dir<='0';
 	
-	strobe_top <= '0';
-	strobe_bot <= '0';
-	
-	strobe_bot_s <= '0';
-	strobe_top_s <= '0';
+	s_strobe_bot <= '0';
+	s_strobe_top <= '0';
 	
 	s_top_wr_reg <= conv_std_logic_vector(CntTop, CntWidth);
 	s_top_active <= conv_std_logic_vector(CntTop, CntWidth);
@@ -89,8 +86,8 @@ begin
 			-- 3. Ѕазовые импульсы стробов (гасим по умолчанию)
 			---------------------------------------------------------------------------	
 			-- ѕо умолчанию гасим стробы каждый такт (делаем их импульсными)
-			strobe_top <= '0'; -- (Ўаг 1: задаем базовое значение по умолчанию)
-			strobe_bot <= '0';
+			s_strobe_top <= '0'; -- (Ўаг 1: задаем базовое значение по умолчанию)
+			s_strobe_bot <= '0';
 
 			---------------------------------------------------------------------------
 			-- 4. јвтомат счета (использует s_top_active вместо статической константы)
@@ -118,11 +115,11 @@ begin
 			-- 5. ‘ормирование стробов относительно текущей активной вершины
 			---------------------------------------------------------------------------
 			if dir='0' and s_cnt = (CntTop - 1) then
-			strobe_top <= '1';  -- строб вершины, на один такт!
+			s_strobe_top <= '1';  -- строб вершины, на один такт!
 			end if;
 			
 			if dir='1' and s_cnt = 1 then
-			strobe_bot <= '1';  -- строб подножи€, на один такт!
+			s_strobe_bot <= '1';  -- строб подножи€, на один такт!
 			end if;
 			
 			
@@ -131,8 +128,8 @@ begin
 end process;
 
 ------------------------------------------------------------------------------------
-q_out<=s_cnt;
-
-
+q_out <= s_cnt;
+strobe_top <= s_strobe_top;
+strobe_bot <= s_strobe_bot;
 
 end architecture;

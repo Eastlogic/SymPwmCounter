@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 47: Assignment to <arg fmt="%s" index="1">strobe_bot_s</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 47: Assignment to <arg fmt="%s" index="1">s_top_wr_reg</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">addr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
