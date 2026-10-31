@@ -12,7 +12,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/sympwmcounter_tb/res_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">res_t</obj_property>
       <obj_property name="ObjectShortName">res_t</obj_property>
@@ -21,9 +21,23 @@
       <obj_property name="ElementShortName">clk_t</obj_property>
       <obj_property name="ObjectShortName">clk_t</obj_property>
    </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/addr_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_t[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_t[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/wr_data_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_data_t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_t[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/wr_en_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en_t</obj_property>
+      <obj_property name="ObjectShortName">wr_en_t</obj_property>
+   </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/q_out_t" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">q_out_t[3:0]</obj_property>
       <obj_property name="ObjectShortName">q_out_t[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/strobe_top_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">strobe_top_t</obj_property>

@@ -11,11 +11,11 @@ Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture sympwmcounter_arch of entity SymPwmCounter [\SymPwmCounter(4,15)\]
+Compiling architecture sympwmcounter_arch of entity SymPwmCounter [\SymPwmCounter(4,7,1)\]
 Compiling architecture behavior of entity sympwmcounter_tb
 Time Resolution for simulation is 1ps.
 Waiting for 2 sub-compilation(s) to finish...
 Compiled 7 VHDL Units
 Built simulation executable D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.exe
-Fuse Memory Usage: 33356 KB
-Fuse CPU Usage: 748 ms
+Fuse Memory Usage: 33688 KB
+Fuse CPU Usage: 1169 ms
