@@ -14,8 +14,8 @@ CntTop:integer:=15						-- Вершина счета по умолчанию
 port(
 res,clk: 		in std_logic;
 q_out:			out std_logic_vector(CntWidth-1 downto 0);	-- Выход счетчика
-strobe_top:		out std_logic  										-- Импульс на вершине счета
---strobe_bot:		out std_logic   										-- Импульс внизу счета (в нуле)
+strobe_top:		out std_logic;  										-- Импульс на вершине счета
+strobe_bot:		out std_logic   										-- Импульс внизу счета (в нуле)
 );
 end entity;
 
@@ -27,7 +27,7 @@ signal dir: std_logic:='0';			-- Признак направления счета "вверх/вниз"
 signal s_cnt: std_logic_vector(CntWidth-1 downto 0):= (others => '0');
 begin
 
---------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 process(res,clk)
 	
 begin
@@ -36,13 +36,13 @@ begin
 	dir<='0';
 	
 	strobe_top <= '0';
---strobe_bot <= '0';
+	strobe_bot <= '0';
 	
 		elsif (clk'event and clk='1') then
 		
 			-- По умолчанию гасим стробы каждый такт (делаем их импульсными)
 			strobe_top <= '0'; -- (Шаг 1: задаем базовое значение по умолчанию)
-			--	strobe_bot <= '0';
+			strobe_bot <= '0';
 		
 			-- СЧЕТ ВВЕРХ: идем до значения TopValue
 			if dir='0' and s_cnt < CntTop then
@@ -52,7 +52,6 @@ begin
 			elsif dir='0' and s_cnt = CntTop then
 			dir<='1';
 			s_cnt<=s_cnt-1;
-			strobe_top <= '1';  -- строб на один такт!
 			
 			-- СЧЕТ ВНИЗ: идем до нуля
 			elsif dir='1' and s_cnt > 0 then
@@ -61,15 +60,26 @@ begin
 			-- Достигли нуля -> меняем направление на счет вверх
 			elsif dir='1' and s_cnt = 0 then
 			dir<='0';
-			s_cnt<=s_cnt+1;
-								
+			s_cnt<=s_cnt+1;			
 			end if;
+			
+			---------------------------------------------------------------------------
+			-- Описание формирования стробов 
+			---------------------------------------------------------------------------
+			if dir='0' and s_cnt = (CntTop - 1) then
+			strobe_top <= '1';  -- строб вершины, на один такт!
+			end if;
+			
+			if dir='1' and s_cnt = 1 then
+			strobe_bot <= '1';  -- строб подножия, на один такт!
+			end if;
+			
 			
 	end if;
 
 end process;
 
---------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 q_out<=s_cnt;
 
 

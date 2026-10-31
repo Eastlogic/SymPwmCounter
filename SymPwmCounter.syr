@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.47 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.48 secs
  
 --> Reading design: SymPwmCounter.prj
 
@@ -126,15 +126,16 @@ Synthesizing Unit <SymPwmCounter>.
     Found 4-bit register for signal <s_cnt>.
     Found 1-bit register for signal <dir>.
     Found 1-bit register for signal <strobe_top>.
-    Found 4-bit adder for signal <s_cnt[3]_GND_5_o_add_7_OUT> created at line 64.
-    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_6_OUT<3:0>> created at line 59.
+    Found 1-bit register for signal <strobe_bot>.
+    Found 4-bit adder for signal <s_cnt[3]_GND_5_o_add_7_OUT> created at line 63.
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_6_OUT<3:0>> created at line 58.
     Found 4-bit comparator greater for signal <s_cnt[3]_PWR_5_o_LessThan_1_o> created at line 48
-    Found 4-bit comparator greater for signal <GND_5_o_s_cnt[3]_LessThan_5_o> created at line 58
+    Found 4-bit comparator greater for signal <GND_5_o_s_cnt[3]_LessThan_5_o> created at line 57
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred   6 D-type flip-flop(s).
+	inferred   7 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred   4 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <SymPwmCounter> synthesized.
 
 =========================================================================
@@ -144,13 +145,12 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
-# Registers                                            : 3
- 1-bit register                                        : 2
+# Registers                                            : 4
+ 1-bit register                                        : 3
  4-bit register                                        : 1
 # Comparators                                          : 2
  4-bit comparator greater                              : 2
-# Multiplexers                                         : 4
- 1-bit 2-to-1 multiplexer                              : 1
+# Multiplexers                                         : 3
  4-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -167,12 +167,11 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Registers                                            : 7
+ Flip-Flops                                            : 7
 # Comparators                                          : 2
  4-bit comparator greater                              : 2
-# Multiplexers                                         : 4
- 1-bit 2-to-1 multiplexer                              : 1
+# Multiplexers                                         : 3
  4-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -193,8 +192,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Registers                                            : 7
+ Flip-Flops                                            : 7
 
 =========================================================================
 
@@ -217,17 +216,17 @@ Top Level Output File Name         : SymPwmCounter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 7
+# BELS                             : 9
 #      INV                         : 2
-#      LUT5                        : 5
-# FlipFlops/Latches                : 6
-#      FDC                         : 5
+#      LUT5                        : 7
+# FlipFlops/Latches                : 7
+#      FDC                         : 6
 #      FDCE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 6
+# IO Buffers                       : 7
 #      IBUF                        : 1
-#      OBUF                        : 5
+#      OBUF                        : 6
 
 Device utilization summary:
 ---------------------------
@@ -236,20 +235,20 @@ Selected Device : 6slx16ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               6  out of  18224     0%  
- Number of Slice LUTs:                    7  out of   9112     0%  
-    Number used as Logic:                 7  out of   9112     0%  
+ Number of Slice Registers:               7  out of  18224     0%  
+ Number of Slice LUTs:                    9  out of   9112     0%  
+    Number used as Logic:                 9  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     13
-   Number with an unused Flip Flop:       7  out of     13    53%  
-   Number with an unused LUT:             6  out of     13    46%  
-   Number of fully used LUT-FF pairs:     0  out of     13     0%  
+ Number of LUT Flip Flop pairs used:      9
+   Number with an unused Flip Flop:       2  out of      9    22%  
+   Number with an unused LUT:             0  out of      9     0%  
+   Number of fully used LUT-FF pairs:     7  out of      9    77%  
    Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                           7
- Number of bonded IOBs:                   7  out of    186     3%  
+ Number of IOs:                           8
+ Number of bonded IOBs:                   8  out of    186     4%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -275,7 +274,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 6     |
+clk                                | BUFGP                  | 7     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -286,9 +285,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 3.033ns (Maximum Frequency: 329.707MHz)
-   Minimum input arrival time before clock: 3.598ns
-   Maximum output required time after clock: 4.346ns
+   Minimum period: 3.102ns (Maximum Frequency: 322.373MHz)
+   Minimum input arrival time before clock: 3.632ns
+   Maximum output required time after clock: 4.412ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -297,10 +296,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.033ns (frequency: 329.707MHz)
-  Total number of paths / destination ports: 31 / 7
+  Clock period: 3.102ns (frequency: 322.373MHz)
+  Total number of paths / destination ports: 36 / 8
 -------------------------------------------------------------------------
-Delay:               3.033ns (Levels of Logic = 1)
+Delay:               3.102ns (Levels of Logic = 1)
   Source:            dir (FF)
   Destination:       dir (FF)
   Source Clock:      clk rising
@@ -310,38 +309,38 @@ Delay:               3.033ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.525   1.271  dir (dir)
-     LUT5:I0->O            1   0.254   0.681  _n0061_inv1 (_n0061_inv)
+     FDCE:C->Q             7   0.525   1.340  dir (dir)
+     LUT5:I0->O            1   0.254   0.681  _n0073_inv1 (_n0073_inv)
      FDCE:CE                   0.302          dir
     ----------------------------------------
-    Total                      3.033ns (1.081ns logic, 1.952ns route)
-                                       (35.6% logic, 64.4% route)
+    Total                      3.102ns (1.081ns logic, 2.021ns route)
+                                       (34.8% logic, 65.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 6 / 6
+  Total number of paths / destination ports: 7 / 7
 -------------------------------------------------------------------------
-Offset:              3.598ns (Levels of Logic = 2)
+Offset:              3.632ns (Levels of Logic = 2)
   Source:            res (PAD)
-  Destination:       dir (FF)
+  Destination:       strobe_top (FF)
   Destination Clock: clk rising
 
-  Data Path: res to dir
+  Data Path: res to strobe_top
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.328   0.681  res_IBUF (res_IBUF)
-     INV:I->O              6   0.255   0.875  res_inv1_INV_0 (res_inv)
-     FDCE:CLR                  0.459          dir
+     INV:I->O              7   0.255   0.909  res_inv1_INV_0 (res_inv)
+     FDC:CLR                   0.459          strobe_top
     ----------------------------------------
-    Total                      3.598ns (2.042ns logic, 1.556ns route)
-                                       (56.8% logic, 43.2% route)
+    Total                      3.632ns (2.042ns logic, 1.590ns route)
+                                       (56.2% logic, 43.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 5 / 5
+  Total number of paths / destination ports: 6 / 6
 -------------------------------------------------------------------------
-Offset:              4.346ns (Levels of Logic = 1)
+Offset:              4.412ns (Levels of Logic = 1)
   Source:            s_cnt_0 (FF)
   Destination:       q_out<0> (PAD)
   Source Clock:      clk rising
@@ -350,11 +349,11 @@ Offset:              4.346ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.525   0.909  s_cnt_0 (s_cnt_0)
+     FDC:C->Q              9   0.525   0.975  s_cnt_0 (s_cnt_0)
      OBUF:I->O                 2.912          q_out_0_OBUF (q_out<0>)
     ----------------------------------------
-    Total                      4.346ns (3.437ns logic, 0.909ns route)
-                                       (79.1% logic, 20.9% route)
+    Total                      4.412ns (3.437ns logic, 0.975ns route)
+                                       (77.9% logic, 22.1% route)
 
 =========================================================================
 
@@ -366,18 +365,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.033|         |         |         |
+clk            |    3.102|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.09 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.25 secs
  
 --> 
 
-Total memory usage is 259660 kilobytes
+Total memory usage is 259532 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
