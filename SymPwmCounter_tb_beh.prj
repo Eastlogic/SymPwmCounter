@@ -1,0 +1,2 @@
+vhdl work "SymPwmCounter.vhd"
+vhdl work "SymPwmCounter_tb.vhd"

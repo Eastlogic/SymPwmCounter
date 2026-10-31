@@ -1,0 +1,10 @@
+Command line:
+   SymPwmCounter_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57467
+
+Sat Oct 31 18:51:01 2026
+
+
+ Elaboration Time: 1.01401 sec

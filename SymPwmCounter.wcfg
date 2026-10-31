@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="sympwmcounter_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/sympwmcounter_tb/res_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">res_t</obj_property>
+      <obj_property name="ObjectShortName">res_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/clk_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_t</obj_property>
+      <obj_property name="ObjectShortName">clk_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/q_out_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">q_out_t[3:0]</obj_property>
+      <obj_property name="ObjectShortName">q_out_t[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/strobe_top_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">strobe_top_t</obj_property>
+      <obj_property name="ObjectShortName">strobe_top_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/strobe_bot_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">strobe_bot_t</obj_property>
+      <obj_property name="ObjectShortName">strobe_bot_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>

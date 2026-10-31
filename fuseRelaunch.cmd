@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.exe" -prj "D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_beh.prj" "work.SymPwmCounter_tb" 

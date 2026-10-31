@@ -44,6 +44,7 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="SymPwmCounter_envsettings.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="SymPwmCounter_fpga_editor.log"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="SymPwmCounter_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="SymPwmCounter_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="SymPwmCounter_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="SymPwmCounter_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="SymPwmCounter_map.ncd" xil_pn:subbranch="Map"/>
@@ -90,31 +91,31 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793459727" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1793459727">
+    <transform xil_pn:end_ts="1793465451" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1793465451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="SymPwmCounter.vhd"/>
       <outfile xil_pn:name="SymPwmCounter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1793442877" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6935839403619497288" xil_pn:start_ts="1793442877">
+    <transform xil_pn:end_ts="1793465451" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6935839403619497288" xil_pn:start_ts="1793465451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793442877" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-384046791587918026" xil_pn:start_ts="1793442877">
+    <transform xil_pn:end_ts="1793465451" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-384046791587918026" xil_pn:start_ts="1793465451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793442285" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2126677604601758575" xil_pn:start_ts="1793442285">
+    <transform xil_pn:end_ts="1793465184" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2126677604601758575" xil_pn:start_ts="1793465184">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793459727" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1793459727">
+    <transform xil_pn:end_ts="1793465451" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1793465451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="SymPwmCounter.vhd"/>
       <outfile xil_pn:name="SymPwmCounter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1793459736" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8838127358627159760" xil_pn:start_ts="1793459727">
+    <transform xil_pn:end_ts="1793465457" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8838127358627159760" xil_pn:start_ts="1793465451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="SymPwmCounter_tb_beh.prj"/>
@@ -124,7 +125,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1793459737" xil_pn:in_ck="5792817283137067377" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8155465677112248803" xil_pn:start_ts="1793459736">
+    <transform xil_pn:end_ts="1793465458" xil_pn:in_ck="7159523252985566701" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8155465677112248803" xil_pn:start_ts="1793465457">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="SymPwmCounter_tb_isim_beh.wdb"/>
@@ -135,11 +136,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793208595" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-3466725124556112389" xil_pn:start_ts="1793208595">
+    <transform xil_pn:end_ts="1793465089" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-3466725124556112389" xil_pn:start_ts="1793465089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793208595" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-2126677604601758575" xil_pn:start_ts="1793208595">
+    <transform xil_pn:end_ts="1793465089" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-2126677604601758575" xil_pn:start_ts="1793465089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -147,7 +148,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793208595" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="2622045082911301309" xil_pn:start_ts="1793208595">
+    <transform xil_pn:end_ts="1793465089" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="2622045082911301309" xil_pn:start_ts="1793465089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -155,15 +156,16 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793208595" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4315399877783260325" xil_pn:start_ts="1793208595">
+    <transform xil_pn:end_ts="1793465089" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4315399877783260325" xil_pn:start_ts="1793465089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793459427" xil_pn:in_ck="-301947769836058243" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-3029348835125467286" xil_pn:start_ts="1793459406">
+    <transform xil_pn:end_ts="1793465100" xil_pn:in_ck="-301947769836058243" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-3029348835125467286" xil_pn:start_ts="1793465089">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="SymPwmCounter.lso"/>
       <outfile xil_pn:name="SymPwmCounter.ngc"/>
       <outfile xil_pn:name="SymPwmCounter.ngr"/>
@@ -171,29 +173,29 @@
       <outfile xil_pn:name="SymPwmCounter.stx"/>
       <outfile xil_pn:name="SymPwmCounter.syr"/>
       <outfile xil_pn:name="SymPwmCounter.xst"/>
-      <outfile xil_pn:name="SymPwmCounter_tb_beh.prj"/>
-      <outfile xil_pn:name="SymPwmCounter_tb_stx_beh.prj"/>
       <outfile xil_pn:name="SymPwmCounter_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1793214548" xil_pn:in_ck="-301947769836059495" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-71120476428745646" xil_pn:start_ts="1793214548">
+    <transform xil_pn:end_ts="1793465100" xil_pn:in_ck="-301947769836059495" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-71120476428745646" xil_pn:start_ts="1793465100">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1793459437" xil_pn:in_ck="8117410652012043340" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7126608288971022692" xil_pn:start_ts="1793459427">
+    <transform xil_pn:end_ts="1793465108" xil_pn:in_ck="8117410652012043340" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7126608288971022692" xil_pn:start_ts="1793465100">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SymPwmCounter.bld"/>
       <outfile xil_pn:name="SymPwmCounter.ngd"/>
       <outfile xil_pn:name="SymPwmCounter_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1793459456" xil_pn:in_ck="-7437985047766073747" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="170182801565208134" xil_pn:start_ts="1793459437">
+    <transform xil_pn:end_ts="1793465120" xil_pn:in_ck="-7437985047766073747" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="170182801565208134" xil_pn:start_ts="1793465108">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SymPwmCounter.pcf"/>
       <outfile xil_pn:name="SymPwmCounter_map.map"/>
       <outfile xil_pn:name="SymPwmCounter_map.mrp"/>
@@ -204,9 +206,10 @@
       <outfile xil_pn:name="SymPwmCounter_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1793459481" xil_pn:in_ck="6930761316127858342" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1793459456">
+    <transform xil_pn:end_ts="1793465140" xil_pn:in_ck="6930761316127858342" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1793465120">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SymPwmCounter.ncd"/>
       <outfile xil_pn:name="SymPwmCounter.pad"/>
       <outfile xil_pn:name="SymPwmCounter.par"/>
@@ -218,9 +221,10 @@
       <outfile xil_pn:name="SymPwmCounter_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1793459481" xil_pn:in_ck="-1714344858814847639" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1793459473">
+    <transform xil_pn:end_ts="1793465140" xil_pn:in_ck="-1714344858814847639" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1793465132">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SymPwmCounter.twr"/>
       <outfile xil_pn:name="SymPwmCounter.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
