@@ -5,6 +5,7 @@
    <db_ref_list>
       <db_ref path="D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.wdb" id="1" type="auto">
          <top_modules>
+            <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
             <top_module name="std_logic_unsigned" />
@@ -12,7 +13,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="10" />
    <wvobject fp_name="/sympwmcounter_tb/res_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">res_t</obj_property>
       <obj_property name="ObjectShortName">res_t</obj_property>
@@ -20,17 +21,22 @@
    <wvobject fp_name="/sympwmcounter_tb/clk_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_t</obj_property>
       <obj_property name="ObjectShortName">clk_t</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
    </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/addr_t" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">addr_t[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_t[3:0]</obj_property>
+      <obj_property name="ElementShortName">addr_t[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_t[7:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/wr_data_t" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">wr_data_t[31:0]</obj_property>
       <obj_property name="ObjectShortName">wr_data_t[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      <obj_property name="CustomSignalColor">#c0c0c0</obj_property>
    </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/wr_en_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">wr_en_t</obj_property>
@@ -42,8 +48,14 @@
       <obj_property name="ElementShortName">q_out_t[3:0]</obj_property>
       <obj_property name="ObjectShortName">q_out_t[3:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      <obj_property name="CustomSignalColor">#0000ff</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sympwmcounter_tb/uut/dir" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dir</obj_property>
+      <obj_property name="ObjectShortName">dir</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
    </wvobject>
    <wvobject fp_name="/sympwmcounter_tb/strobe_top_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">strobe_top_t</obj_property>
