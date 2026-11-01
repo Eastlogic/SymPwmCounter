@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
-use IEEE.std_logic_arith.all; -- Требуется для функций конвертации (conv_std_logic_vector)
+use IEEE.numeric_std.all;
 
 
 -- Счетчик формирования симметричной ШИМ
@@ -36,8 +36,10 @@ signal dir: std_logic:='0';			-- Признак направления счета "вверх/вниз"
 signal s_cnt: std_logic_vector(CntWidth-1 downto 0):= (others => '0');
 
 -- Регистры для динамического управления вершиной счета (CntTop)
-signal s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_vector(CntTop, CntWidth); -- Теневой регистр записи
-signal s_top_active:  std_logic_vector(CntWidth-1 downto 0) := conv_std_logic_vector(CntTop, CntWidth); -- Рабочий (активный) регистр таймера
+-- Стандартное преобразование типов std_logic_vector <- unsigned <- integer
+signal s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := std_logic_vector(to_unsigned(CntTop, CntWidth)); -- Теневой регистр записи
+signal s_top_active:  std_logic_vector(CntWidth-1 downto 0) := std_logic_vector(to_unsigned(CntTop, CntWidth)); -- Рабочий (активный) регистр таймера
+
 
 -- Внутренние сигналы для чтения состояния стробов внутри архитектуры
 signal s_strobe_bot: std_logic := '0';
@@ -55,9 +57,9 @@ begin
 	
 	s_strobe_bot <= '0';
 	s_strobe_top <= '0';
-	
-	s_top_wr_reg <= conv_std_logic_vector(CntTop, CntWidth);
-	s_top_active <= conv_std_logic_vector(CntTop, CntWidth);
+
+	s_top_wr_reg <= std_logic_vector(to_unsigned(CntTop, CntWidth));
+	s_top_active <= std_logic_vector(to_unsigned(CntTop, CntWidth));
 	
 	
 		elsif (clk'event and clk='1') then

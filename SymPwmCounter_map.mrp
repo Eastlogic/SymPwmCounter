@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : ftg256
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sun Nov 01 13:32:20 2026
+Mapped Date    : Sun Nov 01 13:55:21 2026
 
 Design Summary
 --------------
@@ -36,12 +36,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    36 out of   2,278    1%
+  Number of occupied Slices:                    38 out of   2,278    1%
   Number of MUXCYs used:                        72 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:          127
-    Number with an unused Flip Flop:            76 out of     127   59%
-    Number with an unused LUT:                  31 out of     127   24%
-    Number of fully used LUT-FF pairs:          20 out of     127   15%
+  Number of LUT Flip Flop pairs used:          128
+    Number with an unused Flip Flop:            77 out of     128   60%
+    Number with an unused LUT:                  32 out of     128   25%
+    Number of fully used LUT-FF pairs:          19 out of     128   14%
     Number of unique control sets:               4
     Number of slice register sites lost
       to control set restrictions:               5 out of  18,224    1%

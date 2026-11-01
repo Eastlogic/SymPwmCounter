@@ -2,9 +2,27 @@ Command line:
    SymPwmCounter_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  58556
+     -socket  58572
 
-Sun Nov 01 13:38:05 2026
+Sun Nov 01 13:56:20 2026
 
 
- Elaboration Time: 1.02961 sec
+ Elaboration Time: 1.10761 sec
+
+ Current Memory Usage: 680.206 Meg
+
+ Total Signals          : 22
+ Total Nets             : 60
+ Total Signal Drivers   : 14
+ Total Blocks           : 6
+ Total Primitive Blocks : 5
+ Total Processes        : 6
+ Total Traceable Variables  : 19
+ Total Scalar Nets and Variables : 565
+
+ Total Simulation Time: 3.18242 sec
+
+ Current Memory Usage: 994.779 Meg
+
+Sun Nov 01 13:56:50 2026
+

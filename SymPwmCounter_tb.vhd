@@ -7,26 +7,6 @@ END SymPwmCounter_tb;
 
 ARCHITECTURE behavior OF SymPwmCounter_tb IS 
 
-
-       -- ќбъ€вление компонента UUT с учетом новых портов (по стандарту VHDL-87)
---    COMPONENT SymPwmCounter
---    GENERIC(
---        CntWidth : integer := 4;
---        CntTop   : integer := 7;      -- ”меньшаем дл€ удобства симул€ции (вершина = 7)
---        ChNumber : integer := 1
---    );
---    PORT(
---        res         : IN  std_logic;
---        clk         : IN  std_logic;
---        q_out       : OUT std_logic_vector(CntWidth-1 downto 0);
---        strobe_top  : OUT std_logic;
---        strobe_bot  : OUT std_logic;
---        addr        : IN  std_logic_vector(3 downto 0);
---        wr_data     : IN  std_logic_vector(31 downto 0);
---        wr_en       : IN  std_logic
---    );
---    END COMPONENT; 
-
    -- ¬ходные сигналы тестбенча
    signal res_t     : std_logic := '0';
    signal clk_t     : std_logic := '0';
@@ -46,7 +26,6 @@ BEGIN
  
     -- »нстанцирование тестируемого модул€ (UUT)
     -- ѕереопредел€ем через generic разр€дность на 4 бита, а вершину на 7
---    uut: SymPwmCounter								-- вариант VHDL-87
 	 uut:entity work.SymPwmCounter					-- вариант VHDL-93
     GENERIC MAP(
         CntWidth => 4,

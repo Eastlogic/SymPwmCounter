@@ -131,13 +131,13 @@ WARNING:Xst:647 - Input <wr_data<31:16>> is never used. This port will be preser
     Found 1-bit register for signal <dir>.
     Found 1-bit register for signal <s_strobe_bot>.
     Found 1-bit register for signal <s_strobe_top>.
-    Found 16-bit adder for signal <s_cnt[15]_GND_5_o_add_11_OUT> created at line 113.
-    Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_10_OUT<15:0>> created at line 108.
-    Found 16-bit subtractor for signal <GND_5_o_GND_5_o_sub_17_OUT<15:0>> created at line 119.
-    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_5_o> created at line 98
-    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_7_o> created at line 102
-    Found 16-bit comparator greater for signal <GND_5_o_s_cnt[15]_LessThan_9_o> created at line 107
-    Found 16-bit comparator equal for signal <s_cnt[15]_GND_5_o_equal_18_o> created at line 119
+    Found 16-bit adder for signal <s_cnt[15]_GND_6_o_add_11_OUT> created at line 115.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_10_OUT<15:0>> created at line 110.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_17_OUT<15:0>> created at line 121.
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_5_o> created at line 100
+    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_7_o> created at line 104
+    Found 16-bit comparator greater for signal <GND_6_o_s_cnt[15]_LessThan_9_o> created at line 109
+    Found 16-bit comparator equal for signal <s_cnt[15]_GND_6_o_equal_18_o> created at line 121
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  51 D-type flip-flop(s).
@@ -400,11 +400,11 @@ clk            |    5.663|         |         |         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.89 secs
+Total CPU time to Xst completion: 7.65 secs
  
 --> 
 
-Total memory usage is 261196 kilobytes
+Total memory usage is 261900 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

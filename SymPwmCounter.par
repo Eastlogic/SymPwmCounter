@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-TP-LINK::  Sun Nov 01 13:32:35 2026
+TP-LINK::  Sun Nov 01 13:55:37 2026
 
 par -w -intstyle ise -ol high -mt off SymPwmCounter_map.ncd SymPwmCounter.ncd
 SymPwmCounter.pcf 
@@ -45,12 +45,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    36 out of   2,278    1%
+  Number of occupied Slices:                    38 out of   2,278    1%
   Number of MUXCYs used:                        72 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:          127
-    Number with an unused Flip Flop:            76 out of     127   59%
-    Number with an unused LUT:                  31 out of     127   24%
-    Number of fully used LUT-FF pairs:          20 out of     127   15%
+  Number of LUT Flip Flop pairs used:          128
+    Number with an unused Flip Flop:            77 out of     128   60%
+    Number with an unused LUT:                  32 out of     128   25%
+    Number of fully used LUT-FF pairs:          19 out of     128   14%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -100,11 +100,11 @@ Starting Router
 
 Phase  1  : 467 unrouted;      REAL time: 7 secs 
 
-Phase  2  : 384 unrouted;      REAL time: 8 secs 
+Phase  2  : 384 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 109 unrouted;      REAL time: 8 secs 
+Phase  3  : 109 unrouted;      REAL time: 7 secs 
 
-Phase  4  : 106 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  4  : 109 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
 
 Updating file: SymPwmCounter.ncd with current fully routed design.
 
@@ -120,7 +120,7 @@ Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 9
 
 Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 Total REAL time to Router completion: 9 secs 
-Total CPU time to Router completion: 9 secs 
+Total CPU time to Router completion: 8 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -140,8 +140,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     5.001ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.458ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     5.362ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.453ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -157,7 +157,7 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 10 secs 
+Total REAL time to PAR completion: 9 secs 
 Total CPU time to PAR completion: 9 secs 
 
 Peak Memory Usage:  585 MB
