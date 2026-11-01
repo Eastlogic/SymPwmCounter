@@ -121,6 +121,9 @@
     <transform xil_pn:end_ts="1793534176" xil_pn:in_ck="3486117318269497935" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8838127358627159760" xil_pn:start_ts="1793534168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SymPwmCounter_tb_beh.prj"/>
       <outfile xil_pn:name="SymPwmCounter_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -131,6 +134,10 @@
     <transform xil_pn:end_ts="1793534176" xil_pn:in_ck="7159523252985566701" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8155465677112248803" xil_pn:start_ts="1793534176">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SymPwmCounter_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
