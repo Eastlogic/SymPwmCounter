@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: SymPwmCounter.prj
 
@@ -125,24 +125,23 @@ Synthesizing Unit <SymPwmCounter>.
         CntTop = 65535
         ChNumber = 1
 WARNING:Xst:647 - Input <addr<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wr_data<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit register for signal <s_top_active>.
     Found 16-bit register for signal <s_top_wr_reg>.
     Found 16-bit register for signal <s_cnt>.
+    Found 32-bit register for signal <s_ctrl1_reg>.
     Found 1-bit register for signal <dir>.
     Found 1-bit register for signal <s_strobe_bot>.
     Found 1-bit register for signal <s_strobe_top>.
-    Found 1-bit register for signal <ctrl_en_reg>.
-    Found 16-bit adder for signal <s_cnt[15]_GND_6_o_add_13_OUT> created at line 126.
-    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_12_OUT<15:0>> created at line 121.
-    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_19_OUT<15:0>> created at line 132.
-    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_7_o> created at line 111
-    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_9_o> created at line 115
-    Found 16-bit comparator greater for signal <GND_6_o_s_cnt[15]_LessThan_11_o> created at line 120
-    Found 16-bit comparator equal for signal <s_cnt[15]_GND_6_o_equal_20_o> created at line 132
+    Found 16-bit adder for signal <s_cnt[15]_GND_6_o_add_16_OUT> created at line 130.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_15_OUT<15:0>> created at line 125.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_22_OUT<15:0>> created at line 136.
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_10_o> created at line 115
+    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_12_o> created at line 119
+    Found 16-bit comparator greater for signal <GND_6_o_s_cnt[15]_LessThan_14_o> created at line 124
+    Found 16-bit comparator equal for signal <s_cnt[15]_GND_6_o_equal_23_o> created at line 136
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  52 D-type flip-flop(s).
+	inferred  83 D-type flip-flop(s).
 	inferred   4 Comparator(s).
 	inferred   5 Multiplexer(s).
 Unit <SymPwmCounter> synthesized.
@@ -155,8 +154,9 @@ Macro Statistics
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
 # Registers                                            : 7
- 1-bit register                                        : 4
+ 1-bit register                                        : 3
  16-bit register                                       : 3
+ 32-bit register                                       : 1
 # Comparators                                          : 4
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
@@ -170,6 +170,37 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <s_ctrl1_reg_31> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_30> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_29> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_28> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_27> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_26> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_25> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_24> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_23> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_22> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_21> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_20> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_19> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_18> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_17> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_16> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_15> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_14> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_13> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_12> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_11> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_10> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_9> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_8> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_7> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_6> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_5> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_4> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_3> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_2> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_1> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -178,8 +209,8 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
-# Registers                                            : 52
- Flip-Flops                                            : 52
+# Registers                                            : 83
+ Flip-Flops                                            : 83
 # Comparators                                          : 4
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
@@ -192,6 +223,37 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <s_ctrl1_reg_31> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_30> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_29> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_28> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_27> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_26> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_25> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_24> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_23> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_22> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_21> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_20> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_19> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_18> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_17> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_16> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_15> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_14> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_13> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_12> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_11> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_10> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_9> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_8> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_7> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_6> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_5> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_4> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_3> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_2> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_ctrl1_reg_1> has a constant value of 0 in block <SymPwmCounter>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <SymPwmCounter> ...
 
@@ -229,15 +291,15 @@ Top Level Output File Name         : SymPwmCounter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 225
+# BELS                             : 256
 #      GND                         : 1
 #      INV                         : 32
 #      LUT1                        : 17
 #      LUT2                        : 3
-#      LUT3                        : 2
+#      LUT3                        : 1
 #      LUT4                        : 21
-#      LUT5                        : 2
-#      LUT6                        : 32
+#      LUT5                        : 19
+#      LUT6                        : 47
 #      MUXCY                       : 66
 #      VCC                         : 1
 #      XORCY                       : 48
@@ -247,9 +309,9 @@ Primitive and Black Box Usage:
 #      FDPE                        : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 42
+# IO Buffers                       : 74
 #      IBUF                        : 24
-#      OBUF                        : 18
+#      OBUF                        : 50
 
 Device utilization summary:
 ---------------------------
@@ -259,19 +321,19 @@ Selected Device : 6slx16ftg256-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              52  out of  18224     0%  
- Number of Slice LUTs:                  109  out of   9112     1%  
-    Number used as Logic:               109  out of   9112     1%  
+ Number of Slice LUTs:                  140  out of   9112     1%  
+    Number used as Logic:               140  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    141
-   Number with an unused Flip Flop:      89  out of    141    63%  
-   Number with an unused LUT:            32  out of    141    22%  
-   Number of fully used LUT-FF pairs:    20  out of    141    14%  
+ Number of LUT Flip Flop pairs used:    156
+   Number with an unused Flip Flop:     104  out of    156    66%  
+   Number with an unused LUT:            16  out of    156    10%  
+   Number of fully used LUT-FF pairs:    36  out of    156    23%  
    Number of unique control sets:         5
 
 IO Utilization: 
- Number of IOs:                          61
- Number of bonded IOBs:                  43  out of    186    23%  
+ Number of IOs:                          93
+ Number of bonded IOBs:                  75  out of    186    40%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -308,10 +370,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.222ns (Maximum Frequency: 160.720MHz)
-   Minimum input arrival time before clock: 5.157ns
-   Maximum output required time after clock: 4.645ns
-   Maximum combinational path delay: No path found
+   Minimum period: 6.216ns (Maximum Frequency: 160.875MHz)
+   Minimum input arrival time before clock: 5.463ns
+   Maximum output required time after clock: 6.870ns
+   Maximum combinational path delay: 8.077ns
 
 Timing Details:
 ---------------
@@ -319,10 +381,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.222ns (frequency: 160.720MHz)
-  Total number of paths / destination ports: 4561 / 67
+  Clock period: 6.216ns (frequency: 160.875MHz)
+  Total number of paths / destination ports: 4017 / 67
 -------------------------------------------------------------------------
-Delay:               6.222ns (Levels of Logic = 3)
+Delay:               6.216ns (Levels of Logic = 4)
   Source:            s_cnt_4 (FF)
   Destination:       s_cnt_0 (FF)
   Source Clock:      clk rising
@@ -332,20 +394,21 @@ Delay:               6.222ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.525   1.431  s_cnt_4 (s_cnt_4)
-     LUT6:I0->O            1   0.254   0.790  dir_GND_6_o_AND_6_o3 (dir_GND_6_o_AND_6_o3)
-     LUT4:I2->O           18   0.250   1.235  dir_GND_6_o_AND_6_o4 (dir_GND_6_o_AND_6_o)
-     LUT6:I5->O           16   0.254   1.181  _n0098_inv (_n0098_inv)
-     FDCE:CE                   0.302          s_cnt_0
+     FDCE:C->Q            11   0.525   1.494  s_cnt_4 (s_cnt_4)
+     LUT6:I0->O            1   0.254   0.790  dir_GND_6_o_AND_38_o3 (dir_GND_6_o_AND_38_o3)
+     LUT4:I2->O           17   0.250   1.209  dir_GND_6_o_AND_38_o4 (dir_GND_6_o_AND_38_o)
+     LUT6:I5->O            1   0.254   1.112  Mmux_s_cnt[15]_s_cnt[15]_mux_20_OUT151 (s_cnt[15]_s_cnt[15]_mux_20_OUT<8>)
+     LUT5:I0->O            1   0.254   0.000  s_cnt_8_dpot (s_cnt_8_dpot)
+     FDCE:D                    0.074          s_cnt_8
     ----------------------------------------
-    Total                      6.222ns (1.585ns logic, 4.637ns route)
-                                       (25.5% logic, 74.5% route)
+    Total                      6.216ns (1.611ns logic, 4.605ns route)
+                                       (25.9% logic, 74.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 188 / 86
 -------------------------------------------------------------------------
-Offset:              5.157ns (Levels of Logic = 3)
+Offset:              5.463ns (Levels of Logic = 3)
   Source:            addr<6> (PAD)
   Destination:       s_top_wr_reg_0 (FF)
   Destination Clock: clk rising
@@ -354,32 +417,54 @@ Offset:              5.157ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   1.112  addr_6_IBUF (addr_6_IBUF)
-     LUT5:I0->O            2   0.254   0.726  _n0088_inv11 (_n0088_inv1)
-     LUT3:I2->O           16   0.254   1.181  _n0088_inv1 (_n0088_inv)
+     IBUF:I->O             2   1.328   0.954  addr_6_IBUF (addr_6_IBUF)
+     LUT3:I0->O           17   0.235   1.209  _n0122_inv11 (_n0122_inv1)
+     LUT5:I4->O           16   0.254   1.181  _n0108_inv1 (_n0108_inv)
      FDPE:CE                   0.302          s_top_wr_reg_0
     ----------------------------------------
-    Total                      5.157ns (2.138ns logic, 3.019ns route)
-                                       (41.5% logic, 58.5% route)
+    Total                      5.463ns (2.119ns logic, 3.344ns route)
+                                       (38.8% logic, 61.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 18 / 18
+  Total number of paths / destination ports: 51 / 34
 -------------------------------------------------------------------------
-Offset:              4.645ns (Levels of Logic = 1)
-  Source:            s_strobe_bot (FF)
-  Destination:       strobe_bot (PAD)
+Offset:              6.870ns (Levels of Logic = 3)
+  Source:            s_ctrl1_reg_0 (FF)
+  Destination:       rd_data<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: s_strobe_bot to strobe_bot
+  Data Path: s_ctrl1_reg_0 to rd_data<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             17   0.525   1.208  s_strobe_bot (s_strobe_bot)
-     OBUF:I->O                 2.912          strobe_bot_OBUF (strobe_bot)
+     FDCE:C->Q            20   0.525   1.286  s_ctrl1_reg_0 (s_ctrl1_reg_0)
+     LUT6:I5->O            1   0.254   0.958  rd_data<31>1 (rd_data<31>)
+     LUT4:I0->O            1   0.254   0.681  rd_data<31>2 (rd_data_0_OBUF)
+     OBUF:I->O                 2.912          rd_data_0_OBUF (rd_data<0>)
     ----------------------------------------
-    Total                      4.645ns (3.437ns logic, 1.208ns route)
-                                       (74.0% logic, 26.0% route)
+    Total                      6.870ns (3.945ns logic, 2.925ns route)
+                                       (57.4% logic, 42.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 96 / 16
+-------------------------------------------------------------------------
+Delay:               8.077ns (Levels of Logic = 4)
+  Source:            addr<2> (PAD)
+  Destination:       rd_data<0> (PAD)
+
+  Data Path: addr<2> to rd_data<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   1.328   1.690  addr_2_IBUF (addr_2_IBUF)
+     LUT6:I0->O            1   0.254   0.958  rd_data<31>1 (rd_data<31>)
+     LUT4:I0->O            1   0.254   0.681  rd_data<31>2 (rd_data_0_OBUF)
+     OBUF:I->O                 2.912          rd_data_0_OBUF (rd_data<0>)
+    ----------------------------------------
+    Total                      8.077ns (4.748ns logic, 3.329ns route)
+                                       (58.8% logic, 41.2% route)
 
 =========================================================================
 
@@ -391,20 +476,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.222|         |         |         |
+clk            |    6.216|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.89 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.70 secs
  
 --> 
 
-Total memory usage is 262604 kilobytes
+Total memory usage is 4503172 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :   63 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

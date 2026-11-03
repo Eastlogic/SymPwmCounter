@@ -18,6 +18,7 @@ ARCHITECTURE behavior OF SymPwmCounter_tb IS
    signal q_out_t       : std_logic_vector(3 downto 0);
    signal strobe_top_t  : std_logic;
    signal strobe_bot_t  : std_logic;
+	signal rd_data_t		: std_logic_vector(31 downto 0);
 
    -- Определение периода тактовой частоты (100 нс)
    constant clk_period : time := 100 ns;
@@ -39,6 +40,7 @@ BEGIN
         strobe_bot => strobe_bot_t,
         addr       => addr_t,
         wr_data    => wr_data_t,
+		  rd_data	 => rd_data_t,
         wr_en      => wr_en_t
     );
 
@@ -69,7 +71,7 @@ BEGIN
 
        -- Шаг 3. Включаем счетчик: пишем '1' в регистр CNT_CTRL1 (адрес смещения 0x00)
        wait until rising_edge(clk_t);
-       addr_t    <= x"00";          -- Адрес 0x00 (CNT_CTRL1)
+       addr_t    <= x"00";         	 -- Адрес 0x00 (CNT_CTRL1)
        wr_data_t <= x"00000001";     -- Бит 0 (EN) = 1
        wr_en_t   <= '1';
        
