@@ -1,7 +1,7 @@
 Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.exe -prj D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_beh.prj work.SymPwmCounter_tb 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
 Parsing VHDL file "D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter.vhd" into library work
 Parsing VHDL file "D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb.vhd" into library work
@@ -15,8 +15,8 @@ Compiling package numeric_std
 Compiling architecture sympwmcounter_arch of entity SymPwmCounter [\SymPwmCounter(4,7,1)\]
 Compiling architecture behavior of entity sympwmcounter_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 3 sub-compilation(s) to finish...
 Compiled 8 VHDL Units
 Built simulation executable D:/ARCHIVE/XilinxISE_14_7/SymPwmCounter/SymPwmCounter_tb_isim_beh.exe
-Fuse Memory Usage: 37572 KB
-Fuse CPU Usage: 702 ms
+Fuse Memory Usage: 36552 KB
+Fuse CPU Usage: 2433 ms
