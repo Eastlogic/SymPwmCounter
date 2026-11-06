@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-TP-LINK::  Thu Nov 05 21:56:58 2026
+DESKTOP-5QKK937::  Fri Nov 06 16:38:54 2026
 
 par -w -intstyle ise -ol high -mt off SymPwmCounter_map.ncd SymPwmCounter.ncd
 SymPwmCounter.pcf 
@@ -32,25 +32,25 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        132 out of   9,112    1%
+  Number of Slice LUTs:                        128 out of   9,112    1%
     Number used as logic:                      127 out of   9,112    1%
       Number using O6 output only:              68
       Number using O5 output only:              16
       Number using O5 and O6:                   43
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      5
-      Number with same-slice register load:      4
+    Number used exclusively as route-thrus:      1
+      Number with same-slice register load:      0
       Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    40 out of   2,278    1%
+  Number of occupied Slices:                    46 out of   2,278    2%
   Number of MUXCYs used:                        72 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:          145
-    Number with an unused Flip Flop:            97 out of     145   66%
-    Number with an unused LUT:                  13 out of     145    8%
-    Number of fully used LUT-FF pairs:          35 out of     145   24%
+  Number of LUT Flip Flop pairs used:          157
+    Number with an unused Flip Flop:           105 out of     157   66%
+    Number with an unused LUT:                  29 out of     157   18%
+    Number of fully used LUT-FF pairs:          23 out of     157   14%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -61,7 +61,7 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        75 out of     186   40%
+  Number of bonded IOBs:                       107 out of     186   57%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -92,35 +92,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 15 secs 
-Finished initial Timing Analysis.  REAL time: 15 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
 Starting Router
 
 
-Phase  1  : 689 unrouted;      REAL time: 22 secs 
+Phase  1  : 726 unrouted;      REAL time: 4 secs 
 
-Phase  2  : 601 unrouted;      REAL time: 23 secs 
+Phase  2  : 636 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 148 unrouted;      REAL time: 25 secs 
+Phase  3  : 143 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 148 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
+Phase  4  : 143 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
 
 Updating file: SymPwmCounter.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 29 secs 
-Total REAL time to Router completion: 29 secs 
-Total CPU time to Router completion: 18 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
+Total REAL time to Router completion: 6 secs 
+Total CPU time to Router completion: 5 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -140,8 +140,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     4.636ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.425ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     4.850ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.442ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -157,10 +157,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 32 secs 
-Total CPU time to PAR completion: 20 secs 
+Total REAL time to PAR completion: 6 secs 
+Total CPU time to PAR completion: 6 secs 
 
-Peak Memory Usage:  588 MB
+Peak Memory Usage:  4508 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

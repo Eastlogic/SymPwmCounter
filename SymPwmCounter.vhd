@@ -13,13 +13,17 @@ entity SymPwmCounter is
 generic(
 CntWidth:integer:=16;					-- Разрядность счетчика по умолчанию
 CntTop:integer:=65535;					-- Вершина счета после сброса(по умолчанию)
-ChNumber:integer:=1						-- Число каналов сравнения
+ChNumber:integer:=16						-- Число каналов сравнения
 );
 port(
 res,clk: 		in std_logic;
 q_out:			out std_logic_vector(CntWidth-1 downto 0);	-- Выход счетчика
 strobe_top:		out std_logic;  										-- Импульс на вершине счета
 strobe_bot:		out std_logic;   										-- Импульс внизу счета (в нуле)
+
+-- Комплементарные выходы ШИМ для верхних и нижних ключей полумостов
+pwm_out_h:      out std_logic_vector(ChNumber-1 downto 0);
+pwm_out_l:      out std_logic_vector(ChNumber-1 downto 0);
 
 -- Процессорный интерфейс таймера (8-битная шина адреса, 32-битная шина данных)
 addr:				in std_logic_vector(7 downto 0);					-- Адрес регистра (до 0xFF)
@@ -47,10 +51,24 @@ signal 	s_ctrl1_reg: 		std_logic_vector(31 downto 0) := (others => '0');		-- Рег
 signal	s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := std_logic_vector(to_unsigned(CntTop, CntWidth)); -- Теневой регистр записи
 signal	s_top_active:  std_logic_vector(CntWidth-1 downto 0) := std_logic_vector(to_unsigned(CntTop, CntWidth)); -- Рабочий (активный) регистр таймера
 
-
 -- Внутренние сигналы для чтения состояния стробов внутри архитектуры
 signal	s_strobe_bot: std_logic := '0';
 signal	s_strobe_top: std_logic := '0';
+
+-- Тип - массив размерностью числа каналов, векторов ширины равной ширине счетчика
+type 		cmpr_array_t is array (0 to ChNumber-1) of std_logic_vector(CntWidth-1 downto 0);
+
+-- Буферизация для регистров сравнения (теневые для записи процессором и активные рабочие)
+signal	s_cmpr_wr_regs:     cmpr_array_t := (others => (others => '0'));		-- Теневые  регистры сравнения
+signal	s_cmpr_active_regs: cmpr_array_t := (others => (others => '0'));		-- Активные регистры сравнения
+
+
+-- Внутренние сигналы для выходов ШИМ
+signal  s_pwm_out_h:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
+signal  s_pwm_out_l:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
+
+
+
 
 begin
 
@@ -68,7 +86,16 @@ begin
 	s_top_wr_reg <= std_logic_vector(to_unsigned(CntTop, CntWidth));
 	s_top_active <= std_logic_vector(to_unsigned(CntTop, CntWidth));
 	
-	s_ctrl1_reg <=  (others => '0'); -- Значение CNT_CTRL1 при сбросе
+	s_ctrl1_reg <=  (others => '0'); 					-- Значение CNT_CTRL1 при сбросе
+	
+	for i in 0 to ChNumber-1 loop							-- Сброс регистров сравнения
+	s_cmpr_wr_regs(i)     <= (others => '0');
+	s_cmpr_active_regs(i) <= (others => '0');
+	end loop;	
+	
+	s_pwm_out_h   <= (others => '0');					-- Значения выходов ШИМ при сбросе
+	s_pwm_out_l   <= (others => '0');	
+	
 	
 		elsif (clk'event and clk='1') then
 
@@ -87,7 +114,13 @@ begin
 					s_top_wr_reg <= wr_data(CntWidth-1 downto 0);
                     
 					when others =>
-					null; -- Другие адреса пока не задействованы
+						-- Универсальная запись в теневые регистры CMPR1..CMPR16, начиная с адреса 0x30 (слово №12)
+						for i in 0 to ChNumber-1 loop
+							if addr(7 downto 2) = std_logic_vector(to_unsigned(12 + i, 6)) then
+							s_cmpr_wr_regs(i) <= wr_data(CntWidth-1 downto 0);
+							end if;
+						end loop;
+						
 				end case;
 			end if;
         
@@ -95,7 +128,13 @@ begin
 			-- 2. Обновление активной вершины счета строго внизу (буферизация)
 			--------------------------------------------------------------------------------------------------
 			if s_strobe_bot = '1' then
-				s_top_active <= s_top_wr_reg;
+			s_top_active <= s_top_wr_reg;
+						
+				-- Переносим значения из теневых регистров сравнения в активные рабочие регистры
+				for i in 0 to ChNumber-1 loop
+				s_cmpr_active_regs(i) <= s_cmpr_wr_regs(i);
+				end loop;
+				
 			end if;
 
 			--------------------------------------------------------------------------------------------------
@@ -151,8 +190,8 @@ end process;
 q_out <= s_cnt;
 strobe_top <= s_strobe_top;
 strobe_bot <= s_strobe_bot;
-
-
+pwm_out_h   <= s_pwm_out_h;
+pwm_out_l   <= s_pwm_out_l;
 
 
 --------------------------------------------------------------------------------------------
