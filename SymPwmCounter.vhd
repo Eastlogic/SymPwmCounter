@@ -114,23 +114,32 @@ begin
 					s_top_wr_reg <= wr_data(CntWidth-1 downto 0);
                     
 					when others =>
-						-- Универсальная запись в теневые регистры CMPR1..CMPR16, начиная с адреса 0x30 (слово №12)
-						for i in 0 to ChNumber-1 loop
-							if addr(7 downto 2) = std_logic_vector(to_unsigned(12 + i, 6)) then
-							s_cmpr_wr_regs(i) <= wr_data(CntWidth-1 downto 0);
-							end if;
-						end loop;
+						
+						-- Проверяем, попадает ли адрес строго в диапазон наших каналов CMPR
+						if addr(7 downto 2) >= 12 and addr(7 downto 2) < (12 + ChNumber) then
+						  
+							-- Универсальная запись в теневые регистры CMPR1..CMPR16, начиная с адреса 0x30 (слово №12)
+							for i in 0 to ChNumber-1 loop
+								if addr(7 downto 2) = std_logic_vector(to_unsigned(12 + i, 6)) then
+								s_cmpr_wr_regs(i) <= wr_data(CntWidth-1 downto 0);
+								end if;
+							end loop;
+						else
+						null; -- Для остальных адресов запись игнорируется
+						end if;
 						
 				end case;
 			end if;
         
 			--------------------------------------------------------------------------------------------------
-			-- 2. Обновление активной вершины счета строго внизу (буферизация)
+			-- 2. Обновление активных регистров внизу счета (буферизация)
 			--------------------------------------------------------------------------------------------------
 			if s_strobe_bot = '1' then
-			s_top_active <= s_top_wr_reg;
+			
+				-- Обновление вершины счета (TOP)
+				s_top_active <= s_top_wr_reg;
 						
-				-- Переносим значения из теневых регистров сравнения в активные рабочие регистры
+				-- обновление регистров сравнения
 				for i in 0 to ChNumber-1 loop
 				s_cmpr_active_regs(i) <= s_cmpr_wr_regs(i);
 				end loop;
@@ -182,6 +191,19 @@ begin
 			
 			end if;
 			
+			--------------------------------------------------------------------------------------------------
+			-- 6. Формирование ШИМ-выходов для всех каналов через цикл (используем активные уставки)
+			--------------------------------------------------------------------------------------------------
+			for i in 0 to ChNumber-1 loop
+				if s_cnt < s_cmpr_active_regs(i) then
+				s_pwm_out_h(i) <= '1';
+				s_pwm_out_l(i) <= '0'; -- Нижний ключ инверсен верхнему
+				else
+				s_pwm_out_h(i) <= '0';
+				s_pwm_out_l(i) <= '1';
+            end if;
+			end loop;
+			
 	end if;
 
 end process;
@@ -197,7 +219,7 @@ pwm_out_l   <= s_pwm_out_l;
 --------------------------------------------------------------------------------------------
 -- Комбинационный процесс чтения регистров (Мультиплексор для процессора)
 --------------------------------------------------------------------------------------------
-process(addr, s_ctrl1_reg, s_top_wr_reg, s_cnt)
+process(addr, s_ctrl1_reg, s_top_active, s_cnt)
 begin
 		-- По умолчанию обнуляем всю шину чтения
 		rd_data <= (others => '0');
@@ -206,8 +228,8 @@ begin
 			when "000000" => -- Смещение 0x00: CNT_CTRL1
 			rd_data <= s_ctrl1_reg;	-- Отдаем весь регистр управления скопом
             
-		when "000011" =>				-- Смещение 0x0C: CNT_TOP (читаем теневой регистр записи)
-			rd_data(CntWidth-1 downto 0) <= s_top_wr_reg;
+		when "000011" =>				-- Смещение 0x0C: CNT_TOP (читаем активный регистр вершины)
+			rd_data(CntWidth-1 downto 0) <= s_top_active;
             
 		when "000101" =>				-- Смещение 0x14: CNT_VAL (текущее значение счетчика)
 			rd_data(CntWidth-1 downto 0) <= s_cnt;

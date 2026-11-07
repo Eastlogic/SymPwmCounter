@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: SymPwmCounter.prj
 
@@ -114,7 +114,6 @@ Parsing architecture <SymPwmCounter_arch> of entity <sympwmcounter>.
 =========================================================================
 
 Elaborating entity <SymPwmCounter> (architecture <SymPwmCounter_arch>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "D:\ARCHIVE\XilinxISE_14_7\SymPwmCounter\SymPwmCounter.vhd" Line 76: Assignment to s_cmpr_active_regs ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -126,24 +125,76 @@ Synthesizing Unit <SymPwmCounter>.
         CntTop = 65535
         ChNumber = 16
 WARNING:Xst:647 - Input <addr<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 16-bit register for signal <s_cnt>.
-    Found 32-bit register for signal <s_ctrl1_reg>.
     Found 16-bit register for signal <s_top_active>.
     Found 16-bit register for signal <s_top_wr_reg>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<0>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<1>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<2>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<3>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<4>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<5>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<6>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<7>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<8>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<9>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<10>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<11>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<12>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<13>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<14>>.
+    Found 16-bit register for signal <s_cmpr_wr_regs<15>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<0>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<1>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<2>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<3>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<4>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<5>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<6>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<7>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<8>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<9>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<10>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<11>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<12>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<13>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<14>>.
+    Found 16-bit register for signal <s_cmpr_active_regs<15>>.
+    Found 16-bit register for signal <s_pwm_out_h>.
+    Found 16-bit register for signal <s_pwm_out_l>.
+    Found 16-bit register for signal <s_cnt>.
+    Found 32-bit register for signal <s_ctrl1_reg>.
     Found 1-bit register for signal <dir>.
     Found 1-bit register for signal <s_strobe_bot>.
     Found 1-bit register for signal <s_strobe_top>.
-    Found 16-bit adder for signal <s_cnt[15]_GND_6_o_add_96_OUT> created at line 169.
-    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_95_OUT<15:0>> created at line 164.
-    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_102_OUT<15:0>> created at line 175.
-    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_90_o> created at line 154
-    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_92_o> created at line 158
-    Found 16-bit comparator greater for signal <GND_6_o_s_cnt[15]_LessThan_94_o> created at line 163
-    Found 16-bit comparator equal for signal <s_cnt[15]_GND_6_o_equal_103_o> created at line 175
+    Found 16-bit adder for signal <s_cnt[15]_GND_6_o_add_114_OUT> created at line 178.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_113_OUT<15:0>> created at line 173.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_120_OUT<15:0>> created at line 184.
+    Found 6-bit comparator lessequal for signal <n0002> created at line 119
+    Found 6-bit comparator greater for signal <addr[7]_GND_6_o_LessThan_3_o> created at line 119
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_top_active[15]_LessThan_108_o> created at line 163
+    Found 16-bit comparator equal for signal <s_cnt[15]_s_top_active[15]_equal_110_o> created at line 167
+    Found 16-bit comparator greater for signal <GND_6_o_s_cnt[15]_LessThan_112_o> created at line 172
+    Found 16-bit comparator equal for signal <s_cnt[15]_GND_6_o_equal_121_o> created at line 184
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[0][15]_LessThan_124_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[1][15]_LessThan_125_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[2][15]_LessThan_126_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[3][15]_LessThan_127_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[4][15]_LessThan_128_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[5][15]_LessThan_129_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[6][15]_LessThan_130_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[7][15]_LessThan_131_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[8][15]_LessThan_132_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[9][15]_LessThan_133_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[10][15]_LessThan_134_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[11][15]_LessThan_135_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[12][15]_LessThan_136_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[13][15]_LessThan_137_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[14][15]_LessThan_138_o> created at line 198
+    Found 16-bit comparator greater for signal <s_cnt[15]_s_cmpr_active_regs[15][15]_LessThan_139_o> created at line 198
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  83 D-type flip-flop(s).
-	inferred   4 Comparator(s).
+	inferred 627 D-type flip-flop(s).
+	inferred  22 Comparator(s).
 	inferred   5 Multiplexer(s).
 Unit <SymPwmCounter> synthesized.
 
@@ -154,13 +205,15 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
-# Registers                                            : 7
+# Registers                                            : 41
  1-bit register                                        : 3
- 16-bit register                                       : 3
+ 16-bit register                                       : 37
  32-bit register                                       : 1
-# Comparators                                          : 4
+# Comparators                                          : 22
  16-bit comparator equal                               : 2
- 16-bit comparator greater                             : 2
+ 16-bit comparator greater                             : 18
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
 # Multiplexers                                         : 5
  1-bit 2-to-1 multiplexer                              : 2
  16-bit 2-to-1 multiplexer                             : 3
@@ -210,11 +263,13 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
-# Registers                                            : 83
- Flip-Flops                                            : 83
-# Comparators                                          : 4
+# Registers                                            : 627
+ Flip-Flops                                            : 627
+# Comparators                                          : 22
  16-bit comparator equal                               : 2
- 16-bit comparator greater                             : 2
+ 16-bit comparator greater                             : 18
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
 # Multiplexers                                         : 5
  1-bit 2-to-1 multiplexer                              : 2
  16-bit 2-to-1 multiplexer                             : 3
@@ -260,7 +315,10 @@ Optimizing unit <SymPwmCounter> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SymPwmCounter, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block SymPwmCounter, actual ratio is 11.
+FlipFlop s_cnt_13 has been replicated 1 time(s)
+FlipFlop s_cnt_14 has been replicated 1 time(s)
+FlipFlop s_cnt_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -268,8 +326,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 52
- Flip-Flops                                            : 52
+# Registers                                            : 599
+ Flip-Flops                                            : 599
 
 =========================================================================
 
@@ -292,21 +350,21 @@ Top Level Output File Name         : SymPwmCounter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 256
+# BELS                             : 678
 #      GND                         : 1
-#      INV                         : 32
+#      INV                         : 48
 #      LUT1                        : 17
 #      LUT2                        : 3
-#      LUT3                        : 1
-#      LUT4                        : 21
-#      LUT5                        : 19
-#      LUT6                        : 47
-#      MUXCY                       : 66
+#      LUT3                        : 8
+#      LUT4                        : 277
+#      LUT5                        : 17
+#      LUT6                        : 48
+#      MUXCY                       : 210
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 52
-#      FDC                         : 3
-#      FDCE                        : 17
+# FlipFlops/Latches                : 599
+#      FDC                         : 36
+#      FDCE                        : 531
 #      FDPE                        : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -321,16 +379,16 @@ Selected Device : 6slx16ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              52  out of  18224     0%  
- Number of Slice LUTs:                  140  out of   9112     1%  
-    Number used as Logic:               140  out of   9112     1%  
+ Number of Slice Registers:             599  out of  18224     3%  
+ Number of Slice LUTs:                  418  out of   9112     4%  
+    Number used as Logic:               418  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    156
-   Number with an unused Flip Flop:     104  out of    156    66%  
-   Number with an unused LUT:            16  out of    156    10%  
-   Number of fully used LUT-FF pairs:    36  out of    156    23%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:    963
+   Number with an unused Flip Flop:     364  out of    963    37%  
+   Number with an unused LUT:           545  out of    963    56%  
+   Number of fully used LUT-FF pairs:    54  out of    963     5%  
+   Number of unique control sets:        20
 
 IO Utilization: 
  Number of IOs:                         125
@@ -360,7 +418,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 52    |
+clk                                | BUFGP                  | 599   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -371,10 +429,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.216ns (Maximum Frequency: 160.875MHz)
-   Minimum input arrival time before clock: 5.463ns
-   Maximum output required time after clock: 6.870ns
-   Maximum combinational path delay: 8.077ns
+   Minimum period: 6.956ns (Maximum Frequency: 143.756MHz)
+   Minimum input arrival time before clock: 5.730ns
+   Maximum output required time after clock: 7.409ns
+   Maximum combinational path delay: 8.395ns
 
 Timing Details:
 ---------------
@@ -382,76 +440,75 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.216ns (frequency: 160.875MHz)
-  Total number of paths / destination ports: 4017 / 67
+  Clock period: 6.956ns (frequency: 143.756MHz)
+  Total number of paths / destination ports: 7931 / 618
 -------------------------------------------------------------------------
-Delay:               6.216ns (Levels of Logic = 4)
-  Source:            s_cnt_4 (FF)
+Delay:               6.956ns (Levels of Logic = 3)
+  Source:            s_cnt_8 (FF)
   Destination:       s_cnt_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: s_cnt_4 to s_cnt_0
+  Data Path: s_cnt_8 to s_cnt_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            11   0.525   1.494  s_cnt_4 (s_cnt_4)
-     LUT6:I0->O            1   0.254   0.790  dir_GND_6_o_AND_38_o3 (dir_GND_6_o_AND_38_o3)
-     LUT4:I2->O           17   0.250   1.209  dir_GND_6_o_AND_38_o4 (dir_GND_6_o_AND_38_o)
-     LUT6:I5->O            1   0.254   1.112  Mmux_s_cnt[15]_s_cnt[15]_mux_100_OUT151 (s_cnt[15]_s_cnt[15]_mux_100_OUT<8>)
-     LUT5:I0->O            1   0.254   0.000  s_cnt_8_dpot (s_cnt_8_dpot)
-     FDCE:D                    0.074          s_cnt_8
+     FDCE:C->Q            42   0.525   1.963  s_cnt_8 (s_cnt_8)
+     LUT4:I0->O            2   0.254   0.954  dir_GND_6_o_AND_39_o2 (dir_GND_6_o_AND_39_o2)
+     LUT4:I1->O           17   0.235   1.209  dir_GND_6_o_AND_39_o4 (dir_GND_6_o_AND_39_o)
+     LUT6:I5->O           19   0.254   1.260  _n0614_inv (_n0614_inv)
+     FDCE:CE                   0.302          s_cnt_0
     ----------------------------------------
-    Total                      6.216ns (1.611ns logic, 4.605ns route)
-                                       (25.9% logic, 74.1% route)
+    Total                      6.956ns (1.570ns logic, 5.386ns route)
+                                       (22.6% logic, 77.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 188 / 86
+  Total number of paths / destination ports: 2783 / 1144
 -------------------------------------------------------------------------
-Offset:              5.463ns (Levels of Logic = 3)
-  Source:            addr<6> (PAD)
-  Destination:       s_top_wr_reg_0 (FF)
+Offset:              5.730ns (Levels of Logic = 3)
+  Source:            addr<4> (PAD)
+  Destination:       s_cmpr_wr_regs_0_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: addr<6> to s_top_wr_reg_0
+  Data Path: addr<4> to s_cmpr_wr_regs_0_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.328   0.954  addr_6_IBUF (addr_6_IBUF)
-     LUT3:I0->O           17   0.235   1.209  _n0315_inv11 (_n0315_inv1)
-     LUT5:I4->O           16   0.254   1.181  _n0320_inv1 (_n0320_inv)
-     FDPE:CE                   0.302          s_top_wr_reg_0
+     IBUF:I->O            31   1.328   1.611  addr_4_IBUF (addr_4_IBUF)
+     LUT5:I3->O            4   0.250   0.804  _n0453_inv11 (_n0453_inv1)
+     LUT3:I2->O           16   0.254   1.181  _n0480_inv1 (_n0480_inv)
+     FDCE:CE                   0.302          s_cmpr_wr_regs_3_0
     ----------------------------------------
-    Total                      5.463ns (2.119ns logic, 3.344ns route)
-                                       (38.8% logic, 61.2% route)
+    Total                      5.730ns (2.134ns logic, 3.596ns route)
+                                       (37.2% logic, 62.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 51 / 34
+  Total number of paths / destination ports: 83 / 66
 -------------------------------------------------------------------------
-Offset:              6.870ns (Levels of Logic = 3)
-  Source:            s_ctrl1_reg_0 (FF)
+Offset:              7.409ns (Levels of Logic = 3)
+  Source:            s_cnt_0 (FF)
   Destination:       rd_data<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: s_ctrl1_reg_0 to rd_data<0>
+  Data Path: s_cnt_0 to rd_data<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            20   0.525   1.286  s_ctrl1_reg_0 (s_ctrl1_reg_0)
-     LUT6:I5->O            1   0.254   0.958  rd_data<32>1 (rd_data<32>)
+     FDCE:C->Q            44   0.525   1.829  s_cnt_0 (s_cnt_0)
+     LUT6:I4->O            1   0.250   0.958  rd_data<32>1 (rd_data<32>)
      LUT4:I0->O            1   0.254   0.681  rd_data<32>2 (rd_data_0_OBUF)
      OBUF:I->O                 2.912          rd_data_0_OBUF (rd_data<0>)
     ----------------------------------------
-    Total                      6.870ns (3.945ns logic, 2.925ns route)
-                                       (57.4% logic, 42.6% route)
+    Total                      7.409ns (3.941ns logic, 3.468ns route)
+                                       (53.2% logic, 46.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 96 / 16
 -------------------------------------------------------------------------
-Delay:               8.077ns (Levels of Logic = 4)
+Delay:               8.395ns (Levels of Logic = 4)
   Source:            addr<2> (PAD)
   Destination:       rd_data<0> (PAD)
 
@@ -459,13 +516,13 @@ Delay:               8.077ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            18   1.328   1.690  addr_2_IBUF (addr_2_IBUF)
+     IBUF:I->O            34   1.328   2.008  addr_2_IBUF (addr_2_IBUF)
      LUT6:I0->O            1   0.254   0.958  rd_data<32>1 (rd_data<32>)
      LUT4:I0->O            1   0.254   0.681  rd_data<32>2 (rd_data_0_OBUF)
      OBUF:I->O                 2.912          rd_data_0_OBUF (rd_data<0>)
     ----------------------------------------
-    Total                      8.077ns (4.748ns logic, 3.329ns route)
-                                       (58.8% logic, 41.2% route)
+    Total                      8.395ns (4.748ns logic, 3.647ns route)
+                                       (56.6% logic, 43.4% route)
 
 =========================================================================
 
@@ -477,20 +534,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.216|         |         |         |
+clk            |    6.956|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.97 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.30 secs
  
 --> 
 
-Total memory usage is 4503172 kilobytes
+Total memory usage is 265740 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   64 (   0 filtered)
+Number of warnings :   63 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
