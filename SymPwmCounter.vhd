@@ -46,6 +46,8 @@ signal 	s_ctrl1_reg: 		std_logic_vector(31 downto 0) := (others => '0');		-- Рег
 																											-- Объявлен, как полноценный 32-битный вектор
 																											-- [31:1] - RESERVED, [0] - EN (Enable)
 
+signal	s_cnt_status:		 std_logic_vector(31 downto 0) := (others => '0');		-- CNT_STATUS, регистр статуса
+
 -- Регистры для динамического управления вершиной счета (CntTop)
 -- Стандартное преобразование типов std_logic_vector <- unsigned <- integer
 signal	s_top_wr_reg:  std_logic_vector(CntWidth-1 downto 0) := std_logic_vector(to_unsigned(CntTop, CntWidth)); -- Теневой регистр записи
@@ -63,9 +65,12 @@ signal	s_cmpr_wr_regs:     cmpr_array_t := (others => (others => '0'));		-- Тене
 signal	s_cmpr_active_regs: cmpr_array_t := (others => (others => '0'));		-- Активные регистры сравнения
 
 
+
+
+
 -- Внутренние сигналы для выходов ШИМ
-signal  s_pwm_out_h:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
-signal  s_pwm_out_l:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
+signal  	s_pwm_out_h:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
+signal  	s_pwm_out_l:    std_logic_vector(ChNumber-1 downto 0) := (others => '0');
 
 
 
@@ -87,6 +92,7 @@ begin
 	s_top_active <= std_logic_vector(to_unsigned(CntTop, CntWidth));
 	
 	s_ctrl1_reg <=  (others => '0'); 					-- Значение CNT_CTRL1 при сбросе
+	s_cnt_status <= (others => '0');						-- Значение CNT_STATUS при сбросе
 	
 	for i in 0 to ChNumber-1 loop							-- Сброс регистров сравнения
 	s_cmpr_wr_regs(i)     <= (others => '0');
@@ -110,7 +116,7 @@ begin
 					s_ctrl1_reg <= wr_data and CTRL1_WR_MASK;		-- Обработка записи только задействованых бит																				
 																				-- Зарезервированные биты обнуляются
                     
-					when "000011" => -- Смещение 0x0C: CNT_TOP (Вершина счета)
+					when "000010" => -- Смещение 0x08: CNT_TOP (Вершина счета)
 					s_top_wr_reg <= wr_data(CntWidth-1 downto 0);
                     
 					when others =>
@@ -178,6 +184,7 @@ begin
 				s_cnt<=s_cnt+1;			
 				end if;
 			
+			s_cnt_status(0) <= dir;
 			-----------------------------------------------------------------------------------
 			-- 5. Формирование стробов относительно текущей активной вершины
 			-----------------------------------------------------------------------------------
@@ -215,26 +222,29 @@ strobe_bot <= s_strobe_bot;
 pwm_out_h   <= s_pwm_out_h;
 pwm_out_l   <= s_pwm_out_l;
 
-
 --------------------------------------------------------------------------------------------
 -- Комбинационный процесс чтения регистров (Мультиплексор для процессора)
 --------------------------------------------------------------------------------------------
-process(addr, s_ctrl1_reg, s_top_active, s_cnt)
+process(addr, s_ctrl1_reg, s_top_active, s_cnt, s_cnt_status)
 begin
 		-- По умолчанию обнуляем всю шину чтения
 		rd_data <= (others => '0');
 
 		case addr(7 downto 2) is
-			when "000000" => -- Смещение 0x00: CNT_CTRL1
-			rd_data <= s_ctrl1_reg;	-- Отдаем весь регистр управления скопом
+		
+			when "000000" =>				-- Смещение 0x00: CNT_CTRL1
+			rd_data <= s_ctrl1_reg;		-- Отдаем весь регистр управления скопом
             
-		when "000011" =>				-- Смещение 0x0C: CNT_TOP (читаем активный регистр вершины)
+			when "000010" =>				-- Смещение 0x08: CNT_TOP (читаем активный регистр вершины)
 			rd_data(CntWidth-1 downto 0) <= s_top_active;
             
-		when "000101" =>				-- Смещение 0x14: CNT_VAL (текущее значение счетчика)
+			when "000011" =>				-- Смещение 0x0C: CNT_VAL (текущее значение счетчика)
 			rd_data(CntWidth-1 downto 0) <= s_cnt;
-            
-		when others =>
+			
+			when "000100" =>				-- Смещение 0x10: CNT_STATUS
+			rd_data <= s_cnt_status;
+			            
+			when others =>
 			rd_data <= (others => '0');
 		end case;
 		
