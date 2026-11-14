@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-TP-LINK::  Sat Nov 14 08:12:04 2026
+TP-LINK::  Sat Nov 14 10:36:56 2026
 
 par -w -intstyle ise -ol high -mt off SymPwmCounter_map.ncd SymPwmCounter.ncd
 SymPwmCounter.pcf 
@@ -27,30 +27,30 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   600 out of  18,224    3%
-    Number used as Flip Flops:                 600
+  Number of Slice Registers:                   696 out of  18,224    3%
+    Number used as Flip Flops:                 696
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        407 out of   9,112    4%
-    Number used as logic:                      287 out of   9,112    3%
-      Number using O6 output only:              89
-      Number using O5 output only:              16
-      Number using O5 and O6:                  182
+  Number of Slice LUTs:                        496 out of   9,112    5%
+    Number used as logic:                      353 out of   9,112    3%
+      Number using O6 output only:             116
+      Number using O5 output only:              30
+      Number using O5 and O6:                  207
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:    120
-      Number with same-slice register load:    119
-      Number with same-slice carry load:         1
+    Number used exclusively as route-thrus:    143
+      Number with same-slice register load:    141
+      Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   190 out of   2,278    8%
-  Number of MUXCYs used:                       264 out of   4,556    5%
-  Number of LUT Flip Flop pairs used:          691
-    Number with an unused Flip Flop:           212 out of     691   30%
-    Number with an unused LUT:                 284 out of     691   41%
-    Number of fully used LUT-FF pairs:         195 out of     691   28%
+  Number of occupied Slices:                   208 out of   2,278    9%
+  Number of MUXCYs used:                       224 out of   4,556    4%
+  Number of LUT Flip Flop pairs used:          789
+    Number with an unused Flip Flop:           261 out of     789   33%
+    Number with an unused LUT:                 293 out of     789   37%
+    Number of fully used LUT-FF pairs:         235 out of     789   29%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -61,7 +61,7 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                       107 out of     186   57%
+  Number of bonded IOBs:                       123 out of     186   66%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -98,13 +98,13 @@ Finished initial Timing Analysis.  REAL time: 7 secs
 Starting Router
 
 
-Phase  1  : 2222 unrouted;      REAL time: 7 secs 
+Phase  1  : 2780 unrouted;      REAL time: 7 secs 
 
-Phase  2  : 1875 unrouted;      REAL time: 8 secs 
+Phase  2  : 2386 unrouted;      REAL time: 8 secs 
 
-Phase  3  : 450 unrouted;      REAL time: 11 secs 
+Phase  3  : 712 unrouted;      REAL time: 11 secs 
 
-Phase  4  : 450 unrouted; (Par is working to improve performance)     REAL time: 11 secs 
+Phase  4  : 712 unrouted; (Par is working to improve performance)     REAL time: 11 secs 
 
 Updating file: SymPwmCounter.ncd with current fully routed design.
 
@@ -116,11 +116,11 @@ Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 1
 
 Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
-Total REAL time to Router completion: 14 secs 
-Total CPU time to Router completion: 13 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+Total REAL time to Router completion: 15 secs 
+Total CPU time to Router completion: 14 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -140,8 +140,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.008ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.401ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     8.059ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.373ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -157,10 +157,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 15 secs 
-Total CPU time to PAR completion: 14 secs 
+Total REAL time to PAR completion: 16 secs 
+Total CPU time to PAR completion: 15 secs 
 
-Peak Memory Usage:  599 MB
+Peak Memory Usage:  600 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

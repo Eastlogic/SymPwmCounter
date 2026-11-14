@@ -12,7 +12,8 @@ Addr_Offset		Register			Fields												| Implementation Status
 0x1C				RESERVED																	|
 0x20				RESERVED																	|
 0x24				RESERVED																	|
-0x28				RESERVED																	|
+0x28				CNT_PWMOUT_INV															|	Read/Write CH1_H_INV[1], CH1_L_INV[0]
+																								|  and so on, for all used channels
 0x2C				CNT_CTRL2		DTR_FIELDS, Other Control Fields				|	Not Implemented
 
 0x30				CMPR1				CMPR1_VAL[31:0]									|	Write (shadow reg)
